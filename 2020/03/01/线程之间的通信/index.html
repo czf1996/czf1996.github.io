@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives | Hexo</title>
+  <title>线程之间的通信 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线程之间的通信">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1.png?e=1583035500&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:8nXvQsFEmYSshxINfdAV26PQxsM=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%9C%E5%9B%BE.png?e=1583043280&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:2DxWiB4o90wUf8E-vP9Qmg0g4ic=&attname=">
+<meta property="article:published_time" content="2020-03-01T02:53:06.000Z">
+<meta property="article:modified_time" content="2020-03-01T05:15:05.115Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1.png?e=1583035500&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:8nXvQsFEmYSshxINfdAV26PQxsM=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,35 +168,118 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-线程之间的通信" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      线程之间的通信
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
+
+        
+        <a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
   	<time datetime="2020-03-01T02:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">线程之间的通信</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h2 id="线程之间的通信"><a href="#线程之间的通信" class="headerlink" title="线程之间的通信"></a>线程之间的通信</h2><p>概念：多个线程在处理同一个资源，但是处理的动作（线程的任务）却不相同。<br>比如：线程A用来生成包子的，线程B用来吃包子的，包子可以理解为同一资源，线程A与线程B处理的动作，一个 是生产，一个是消费，那么线程A与线程B之间就存在线程通信问题。<br><img src="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1.png?e=1583035500&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:8nXvQsFEmYSshxINfdAV26PQxsM=&attname=" alt=""></p>
+<blockquote>
+<p>为什么要处理线程间通信：  </p>
+</blockquote>
+<p>多个线程并发执行时, 在默认情况下CPU是随机切换线程的，当我们需要多个线程来共同完成一件任务，并且我们 希望他们有规律的执行, 那么多线程之间需要一些协调通信，以此来帮我们达到多线程共同操作一份数据。  </p>
+<blockquote>
+<p>如何保证线程间通信有效利用资源:  </p>
+</blockquote>
+<p>多个线程在处理同一个资源，并且任务不同时，需要线程通信来帮助解决线程之间对同一个变量的使用或操作。 就 是多个线程在操作同一份数据时， 避免对同一共享变量的争夺。也就是我们需要通过一定的手段使各个线程能有效 的利用资源。而这种手段即—— 等待唤醒机制。</p>
+<h2 id="等待唤醒机制"><a href="#等待唤醒机制" class="headerlink" title="等待唤醒机制"></a>等待唤醒机制</h2><blockquote>
+<p>什么是等待唤醒机制</p>
+</blockquote>
+<p>这是多个线程间的一种协作机制。谈到线程我们经常想到的是线程间的竞争（race），比如去争夺锁，但这并不是 故事的全部，线程间也会有协作机制。就好比在公司里你和你的同事们，你们可能存在在晋升时的竞争，但更多时 候你们更多是一起合作以完成某些任务。<br>就是在一个线程进行了规定操作后，就进入等待状态（wait()）， 等待其他线程执行完他们的指定代码过后 再将 其唤醒（notify()）;在有多个线程进行等待时， 如果需要，可以使用 notifyAll()来唤醒所有的等待线程。 wait/notify 就是线程间的一种协作机制。</p>
+<blockquote>
+<p>等待唤醒中的方法</p>
+</blockquote>
+<p>等待唤醒机制就是用于解决线程间通信的问题的，使用到的3个方法的含义如下：</p>
+<ol>
+<li>wait：线程不再活动，不再参与调度，进入 wait set 中，因此不会浪费 CPU 资源，也不会去竞争锁了，这时 的线程状态即是 WAITING。它还要等着别的线程执行一个特别的动作，也即是“通知（notify）”在这个对象 上等待的线程从wait set 中释放出来，重新进入到调度队列（ready queue）中<ol start="2">
+<li>notify：则选取所通知对象的 wait set 中的一个线程释放；例如，餐馆有空位置后，等候就餐最久的顾客最先 入座。</li>
+<li>notifyAll：则释放所通知对象的 wait set 上的全部线程。</li>
+</ol>
+</li>
+</ol>
+<p>注意：<br>哪怕只通知了一个等待的线程，被通知线程也不能立即恢复执行，因为它当初中断的地方是在同步块内，而 此刻它已经不持有锁，所以她需要再次尝试去获取锁（很可能面临其它线程的竞争），成功后才能在当初调 用 wait 方法之后的地方恢复执行.<br>总结如下：  </p>
+<ul>
+<li>如果能获取锁，线程就从 WAITING 状态变成 RUNNABLE 状态； </li>
+<li>否则，从 wait set 出来，又进入 entry set，线程就从 WAITING 状态又变成 BLOCKED 状态   </li>
+</ul>
+<blockquote>
+<p>调用wait和notify方法需要注意的细节:</p>
+</blockquote>
+<ol>
+<li>wait方法与notify方法必须要由同一个锁对象调用。因为：对应的锁对象可以通过notify唤醒使用同一个锁对 象调用的wait方法后的线程。 </li>
+<li>wait方法与notify方法是属于Object类的方法的。因为：锁对象可以是任意对象，而任意对象的所属类都是继 承了Object类的。 </li>
+<li>wait方法与notify方法必须要在同步代码块或者是同步函数中使用。因为：必须要通过锁对象调用这2个方法。</li>
+</ol>
+<h2 id="生产者与消费者问题"><a href="#生产者与消费者问题" class="headerlink" title="生产者与消费者问题"></a>生产者与消费者问题</h2><p>就拿生产包子消费包子来说等待唤醒机制如何有效利用资源：</p>
+<blockquote>
+<p>包子铺线程生产包子，吃货线程消费包子。当包子没有时（包子状态为false），吃货线程等待，包子铺线程生产包子 （即包子状态为true），并通知吃货线程（解除吃货的等待状态）,因为已经有包子了，那么包子铺线程进入等待状态。 接下来，吃货线程能否进一步执行则取决于锁的获取情况。如果吃货获取到锁，那么就执行吃包子动作，包子吃完（包 子状态为false），并通知包子铺线程（解除包子铺的等待状态）,吃货线程进入等待。包子铺线程能否进一步执行则取 决于锁的获取情况.  </p>
+</blockquote>
+<p>代码演示：<br>资源类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package WaitNotify;</span><br><span class="line">&#x2F;*资源类*&#x2F;</span><br><span class="line">public class Baozi &#123;</span><br><span class="line">     String pi;</span><br><span class="line">     String xian;</span><br><span class="line">    boolean flag &#x3D; false;&#x2F;&#x2F;表示包子是否存在</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<p> 消费者线程：people</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package WaitNotify;</span><br><span class="line">&#x2F;*消费者线程*&#x2F;</span><br><span class="line">public class People extends  Thread&#123;</span><br><span class="line">    private Baozi bz;&#x2F;&#x2F;共享资源</span><br><span class="line">    public People() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public People(String name, Baozi bz) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">        this.bz &#x3D; bz;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        while (true)&#123;</span><br><span class="line">            synchronized (bz)&#123;</span><br><span class="line">            if (bz.flag&#x3D;&#x3D;false)&#123; &#x2F;&#x2F;如果包子没有了</span><br><span class="line">                try&#123;</span><br><span class="line">                    bz.wait(); &#x2F;&#x2F;消费者线程等待</span><br><span class="line">                &#125;catch (InterruptedException e)&#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;&#x2F;&#x2F;反之，包子资源有</span><br><span class="line">                System.out.println(&quot;顾客正在吃&quot;+bz.pi+bz.xian);</span><br><span class="line">                bz.flag &#x3D;false;</span><br><span class="line">                bz.notify();&#x2F;&#x2F;唤醒生产者线程</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生产者线程：Boss</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">package WaitNotify;</span><br><span class="line">&#x2F;*生产者线程*&#x2F;</span><br><span class="line">public class Boss extends  Thread&#123;</span><br><span class="line">    private  Baozi bz;</span><br><span class="line"></span><br><span class="line">    public Boss() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Boss(String name, Baozi bz) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">        this.bz &#x3D; bz;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        int count &#x3D;0;</span><br><span class="line">        while (true)&#123;</span><br><span class="line">            &#x2F;&#x2F;线程任务：生产包子</span><br><span class="line">            synchronized (bz)&#123;</span><br><span class="line">                if (bz.flag &#x3D;&#x3D;true)&#123;&#x2F;&#x2F;如果包子资源存在</span><br><span class="line">                    try &#123;</span><br><span class="line">                        bz.wait();  &#x2F;&#x2F;生产线程等待</span><br><span class="line">                    &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                    &#x2F;&#x2F;包子资源不存在,执行线程任务</span><br><span class="line">                    System.out.println(&quot;包子铺老板正在制作&quot;);</span><br><span class="line">                    if (count%2&#x3D;&#x3D;0)&#123;</span><br><span class="line">                        bz.pi&#x3D;&quot;白皮&quot;;</span><br><span class="line">                        bz.xian&#x3D;&quot;肉馅&quot;;</span><br><span class="line">                    &#125;else &#123;</span><br><span class="line">                        bz.pi&#x3D;&quot;薄皮&quot;;</span><br><span class="line">                        bz.xian&#x3D;&quot;牛肉馅&quot;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    count++;</span><br><span class="line">                    bz.flag &#x3D; true;</span><br><span class="line">                    &#x2F;&#x2F;做好之后唤醒正在等待的消费者线程</span><br><span class="line">                    System.out.println(&quot;包子做好了，是&quot;+bz.pi +bz.xian);</span><br><span class="line">                    System.out.println(&quot;顾客来吃吧&quot;);</span><br><span class="line">                    bz.notify();</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package WaitNotify;</span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Baozi bz &#x3D; new Baozi();</span><br><span class="line">        People people &#x3D; new People(&quot;顾客&quot;,bz);</span><br><span class="line">        Boss boss &#x3D; new Boss(&quot;包子铺老板&quot;,bz);</span><br><span class="line">        people.start();</span><br><span class="line">        boss.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试结果：<br><img src="http://q6amgzwue.bkt.clouddn.com/%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%9C%E5%9B%BE.png?e=1583043280&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:2DxWiB4o90wUf8E-vP9Qmg0g4ic=&attname=" alt=""></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,312 +291,120 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线程安全问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">线程安全问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程之间的通信"><span class="toc-number">1.1.</span> <span class="toc-text">线程之间的通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#等待唤醒机制"><span class="toc-number">1.2.</span> <span class="toc-text">等待唤醒机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生产者与消费者问题"><span class="toc-number">1.3.</span> <span class="toc-text">生产者与消费者问题</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-02-29T12:06:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">java基础复习——创建多线程的三种方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-02-29T10:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/">java基础复习——hashset原理：哈希表</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">frameset框架实现整个页面跳转</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/ssh%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:28:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/ssh%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/">ssh注解开发参数问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T06:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/">数据库中文查询为nul问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-25T14:25:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/25/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-25T12:55:55.859Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -531,8 +430,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
