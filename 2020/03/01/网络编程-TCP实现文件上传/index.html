@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives: 2020 | Hexo</title>
+  <title>网络编程--TCP实现文件上传 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/2020/page/2/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络编程--TCP实现文件上传">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/TCP-client.png?e=1583067144&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:jg-PZC5uFB5kWEJRkNI8nOuS17w=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/TCP-client.png?e=1583067144&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:jg-PZC5uFB5kWEJRkNI8nOuS17w=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/TCP-3.png?e=1583067781&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:XRfV4SMhhL7K080mO79rKpPXbMA=&attname=">
+<meta property="article:published_time" content="2020-03-01T11:24:29.000Z">
+<meta property="article:modified_time" content="2020-03-01T12:04:19.779Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/TCP-client.png?e=1583067144&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:jg-PZC5uFB5kWEJRkNI8nOuS17w=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,62 +169,128 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-网络编程-TCP实现文件上传" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-25T14:25:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
+    <h1 class="article-title" itemprop="name">
+      网络编程--TCP实现文件上传
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/25/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-25T12:55:55.859Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
+        
+        <a href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="archive-article-date">
+  	<time datetime="2020-03-01T11:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/25/hello-world/">Hello World</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h2 id="TCP通信程序"><a href="#TCP通信程序" class="headerlink" title="TCP通信程序"></a>TCP通信程序</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>TCP通信能实现两台计算机之间的数据交互，通信的两端，要严格区分为客户端（Client）与服务端（Server）。   </p>
+<p>两端通信时步骤：</p>
+<ol>
+<li>服务端程序，需要事先启动，等待客户端的连接。 </li>
+<li>客户端主动连接服务器端，连接成功才能通信。服务端不可以主动连接客户端。  </li>
+</ol>
+<p>在Java中，提供了两个类用于实现TCP通信程序： </p>
+<ol>
+<li>客户端： java.net.Socket 类表示。创建 Socket 对象，向服务端发出连接请求，服务端响应请求，两者建 立连接开始通信。 </li>
+<li>服务端： java.net.ServerSocket 类表示。创建 ServerSocket 对象，相当于开启一个服务，并等待客户端 的连接。</li>
+</ol>
+<h3 id="Socket类"><a href="#Socket类" class="headerlink" title="Socket类"></a>Socket类</h3><p>Socket 类：该类实现客户端套接字，套接字指的是两台设备之间通讯的端点。   </p>
+<p>构造方法 ：  </p>
+<ul>
+<li>public Socket(String host, int port) :创建套接字对象并将其连接到指定主机上的指定端口号。如果指 定的host是null ，则相当于指定地址为回送地址。<br>构造举例，代码如下：  <blockquote>
+<p>Socket client = new Socket(“127.0.0.1”, 6666);    </p>
+</blockquote>
+</li>
+</ul>
+<p>成员方法 :</p>
+<blockquote>
+<p>public InputStream getInputStream() ：返回此套接字的输入流。</p>
+</blockquote>
+<ul>
+<li>如果此Scoket具有相关联的通道，则生成的InputStream 的所有操作也关联该通道。  </li>
+<li>关闭生成的InputStream也将关闭相关的Socket。 <blockquote>
+<p>public OutputStream getOutputStream() ： 返回此套接字的输出流</p>
+</blockquote>
+</li>
+<li>如果此Scoket具有相关联的通道，则生成的OutputStream 的所有操作也关联该通道。</li>
+<li>关闭生成的OutputStream也将关闭相关的Socket。<blockquote>
+<p>public void close() ：关闭此套接字。</p>
+</blockquote>
+</li>
+<li>一旦一个socket被关闭，它不可再使用。</li>
+<li>关闭此socket也将关闭相关的InputStream和OutputStream。<blockquote>
+<p>public void shutdownOutput() ： 禁用此套接字的输出流。</p>
+</blockquote>
+</li>
+<li>任何先前写出的数据将被发送，随后终止输出流。<h3 id="ServerSocket类"><a href="#ServerSocket类" class="headerlink" title="ServerSocket类"></a>ServerSocket类</h3>ServerSocket 类：这个类实现了服务器套接字，该对象等待通过网络的请求。<br>构造方法：</li>
+<li>public ServerSocket(int port) ：使用该构造方法在创建ServerSocket对象时，就可以将其绑定到一个指 定的端口号上，参数port就是端口号。  </li>
+</ul>
+<p>构造举例，代码如下：  </p>
+<blockquote>
+<p>ServerSocket server = new ServerSocket(6666);  </p>
+</blockquote>
+<p>成员方法:</p>
+<ul>
+<li>public Socket accept() ：侦听并接受连接，返回一个新的Socket对象，用于和客户端实现通信。该方法 会一直阻塞直到建立连接。</li>
+</ul>
+<h2 id="实现文件上传"><a href="#实现文件上传" class="headerlink" title="实现文件上传"></a>实现文件上传</h2><blockquote>
+<p>客户端代码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package Tcp;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedInputStream;</span><br><span class="line">import java.io.BufferedOutputStream;</span><br><span class="line">import java.io.FileInputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">&#x2F;*客户端*&#x2F;</span><br><span class="line">public class Client &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        &#x2F;&#x2F;读取本地文件</span><br><span class="line">        BufferedInputStream bis &#x3D;new BufferedInputStream(new FileInputStream(&quot;D:\\新桌面\\1.jpg&quot;));</span><br><span class="line">        &#x2F;&#x2F;创建客户端:参数ip,端口号</span><br><span class="line">        Socket socket &#x3D; new Socket(&quot;localhost&quot;,6666);</span><br><span class="line">        &#x2F;&#x2F;创建输出流输出到服务器</span><br><span class="line">        BufferedOutputStream bos &#x3D; new BufferedOutputStream(socket.getOutputStream());</span><br><span class="line">        &#x2F;&#x2F;写出数据</span><br><span class="line">        int len ;</span><br><span class="line">        byte[] bytes &#x3D; new byte[8 * 1024];</span><br><span class="line">        while ((len&#x3D;bis.read(bytes))!&#x3D;-1)&#123;</span><br><span class="line">            bos.write(bytes,0,len);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;文件上传完毕&quot;);</span><br><span class="line">        &#x2F;&#x2F;关闭资源</span><br><span class="line">        bos.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        bis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>服务端代码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package Tcp;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedInputStream;</span><br><span class="line">import java.io.BufferedOutputStream;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">&#x2F;*服务端*&#x2F;</span><br><span class="line">public class Service &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        System.out.println(&quot;服务器开启-----&quot;);</span><br><span class="line">        &#x2F;&#x2F;创建服务器端ServiceSocket</span><br><span class="line">        ServerSocket serverSocket &#x3D; new ServerSocket(6666);</span><br><span class="line">        &#x2F;&#x2F;循环接收，建立连接</span><br><span class="line">        while (true)&#123;</span><br><span class="line">            Socket accept &#x3D; serverSocket.accept();</span><br><span class="line">            &#x2F;&#x2F;socket对象交给子线程处理,进行读写操作</span><br><span class="line">            new Thread(()-&gt;    &#x2F;&#x2F;使用lambda表达式简化匿名内部类</span><br><span class="line">            &#123;</span><br><span class="line">                try &#123;&#x2F;&#x2F;获取网络流并读取</span><br><span class="line">                    BufferedInputStream bis &#x3D; new BufferedInputStream(accept.getInputStream());</span><br><span class="line">                    &#x2F;&#x2F;输出流,优化图片名重复问题，防止重复上传</span><br><span class="line">                    FileOutputStream fos &#x3D; new FileOutputStream(&quot;D:\\新桌面\\&quot; + System.currentTimeMillis() + &quot;tcp.jpg&quot;);</span><br><span class="line">                    BufferedOutputStream bos &#x3D; new BufferedOutputStream(fos);</span><br><span class="line">                    &#x2F;&#x2F;读写操作</span><br><span class="line">                    int len ;</span><br><span class="line">                    byte[] bytes &#x3D; new byte[8 * 1024];</span><br><span class="line">                    while ((len&#x3D;bis.read(bytes))!&#x3D;-1)&#123;</span><br><span class="line">                        bos.write(bytes,0,len);</span><br><span class="line">                    &#125;</span><br><span class="line">                    &#x2F;&#x2F;关闭资源</span><br><span class="line">                    bos.close();</span><br><span class="line">                    bis.close();</span><br><span class="line">                    accept.close();&#x2F;&#x2F;关闭连接</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            ).start();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果  </p>
+</blockquote>
+<p>服务端截图：<br><img src="http://q6amgzwue.bkt.clouddn.com/TCP-client.png?e=1583067144&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:jg-PZC5uFB5kWEJRkNI8nOuS17w=&attname=" alt=""><br>客户端截图：<br><img src="http://q6amgzwue.bkt.clouddn.com/TCP-client.png?e=1583067144&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:jg-PZC5uFB5kWEJRkNI8nOuS17w=&attname=" alt=""><br>如图所示，上传图片成功。<br><img src="http://q6amgzwue.bkt.clouddn.com/TCP-3.png?e=1583067781&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:XRfV4SMhhL7K080mO79rKpPXbMA=&attname=" alt=""></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -227,22 +302,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IO-文件复制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP通信程序"><span class="toc-number">1.1.</span> <span class="toc-text">TCP通信程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Socket类"><span class="toc-number">1.1.2.</span> <span class="toc-text">Socket类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ServerSocket类"><span class="toc-number">1.1.3.</span> <span class="toc-text">ServerSocket类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现文件上传"><span class="toc-number">1.2.</span> <span class="toc-text">实现文件上传</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/czf1996.github.io/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/czf1996.github.io/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -269,8 +441,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
