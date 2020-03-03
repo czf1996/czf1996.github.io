@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives: 2020/3 | Hexo</title>
+  <title>JDK8新特性--函数式接口 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/2020/03/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK8新特性--函数式接口">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-03T03:20:58.000Z">
+<meta property="article:modified_time" content="2020-03-03T04:51:40.979Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -160,35 +165,121 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-JDK8新特性-函数式接口" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JDK8新特性--函数式接口
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
+
+        
+        <a href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
   	<time datetime="2020-03-03T03:20:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">JDK8新特性--函数式接口</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<p>函数式接口在Java中是指：有且仅有一个抽象方法的接口  </p>
+</blockquote>
+<p>函数式接口，即适用于函数式编程场景的接口。而Java中的函数式编程体现就是Lambda，所以函数式接口就是可 以适用于Lambda使用的接口。只有确保接口中有且仅有一个抽象方法，Java中的Lambda才能顺利地进行推导。</p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>只要确保接口中有且仅有一个抽象方法即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> 修饰符 interface 接口名称 &#123;     </span><br><span class="line">    public abstract 返回值类型 方法名称(可选参数信息);     &#x2F;&#x2F; 其他非抽象方法内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<p>由于接口当中抽象方法的 public abstract 是可以省略的，所以定义一个函数式接口很简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface MyFunctionalInterface &#123;     </span><br><span class="line">    void myMethod();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="FunctionalInterface注解"><a href="#FunctionalInterface注解" class="headerlink" title="@FunctionalInterface注解"></a>@FunctionalInterface注解</h3><p>与 @Override 注解的作用类似，Java 8中专门为函数式接口引入了一个新的注解： @FunctionalInterface 。该注 解可用于一个接口的定义上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">public interface MyFunctionalInterface &#123;</span><br><span class="line">     void myMethod();      </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>一旦使用该注解来定义接口，编译器将会强制检查该接口是否确实有且仅有一个抽象方法，否则将会报错。需要注 意的是，即使不使用该注解，只要满足函数式接口的定义，这仍然是一个函数式接口，使用起来都一样。</p>
+</blockquote>
+<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><p>lambda的特点：延迟加载<br>lambda的使用前提：必须存在函数式接口</p>
+<h3 id="常用的函数式接口"><a href="#常用的函数式接口" class="headerlink" title="常用的函数式接口"></a>常用的函数式接口</h3><h4 id="Supplier接口-（生产者接口）"><a href="#Supplier接口-（生产者接口）" class="headerlink" title="Supplier接口  （生产者接口）"></a>Supplier接口  （生产者接口）</h4><p>java.util.function.Supplier<T> 接口仅包含一个无参的方法： T get() 。用来获取一个泛型参数指定类型的对 象数据。由于这是一个函数式接口，这也就意味着对应的Lambda表达式需要“对外提供”一个符合泛型类型的对象 数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.util.function.Supplier;</span><br><span class="line">   public class Demo08Supplier &#123;     </span><br><span class="line">     private static String getString(Supplier&lt;String&gt; function) &#123;    </span><br><span class="line">               return function.get();</span><br><span class="line">             &#125;</span><br><span class="line">    public static void main(String[] args) &#123;       </span><br><span class="line">          String msgA &#x3D; &quot;Hello&quot;;         </span><br><span class="line">          String msgB &#x3D; &quot;World&quot;;</span><br><span class="line">          System.out.println(getString(() ‐&gt; msgA + msgB));     &#125; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Consumer接口（消费者接口）"><a href="#Consumer接口（消费者接口）" class="headerlink" title="Consumer接口（消费者接口）"></a>Consumer接口（消费者接口）</h3><p>java.util.function.Consumer<T> 接口则正好与Supplier接口相反，它不是生产一个数据，而是消费一个数据， 其数据类型由泛型决定。  </p>
+<blockquote>
+<p>1.抽象方法：accept<br>Consumer 接口中包含抽象方法 void accept(T t) ，意为消费一个指定泛型的数据。基本使用如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Demo09Consumer &#123;</span><br><span class="line">         private static void consumeString(Consumer&lt;String&gt; function) &#123;</span><br><span class="line">        function.accept(&quot;Hello&quot;);        &#125;     </span><br><span class="line">        public static void main(String[] args) &#123;       </span><br><span class="line">              consumeString(s ‐&gt; System.out.println(s));  </span><br><span class="line">               &#125; &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.默认方法：andThen<br>如果一个方法的参数和返回值全都是 Consumer 类型，那么就可以实现效果：消费数据的时候，首先做一个操作， 然后再做一个操作，实现组合。而这个方法就是 Consumer 接口中的default方法 andThen 。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.util.function.Consumer;</span><br><span class="line">   public class Demo10ConsumerAndThen &#123;</span><br><span class="line">          private static void consumeString(Consumer&lt;String&gt; one, Consumer&lt;String&gt; two) &#123;       </span><br><span class="line">           one.andThen(two).accept(&quot;Hello&quot;); </span><br><span class="line">    &#125;     </span><br><span class="line">        public static void main(String[] args) &#123;        </span><br><span class="line">               consumeString( s ‐&gt; System.out.println(s.toUpperCase()),</span><br><span class="line">                              s ‐&gt; System.out.println(s.toLowerCase()));  </span><br><span class="line">      &#125; &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果将会首先打印完全大写的HELLO，然后打印完全小写的hello。当然，通过链式写法可以实现更多步骤的组合。</p>
+</blockquote>
+<h3 id="Predicate接口（判断）"><a href="#Predicate接口（判断）" class="headerlink" title="Predicate接口（判断）"></a>Predicate接口（判断）</h3><blockquote>
+<p>有时候我们需要对某种类型的数据进行判断，从而得到一个boolean值结果。这时可以使用 java.util.function.Predicate<T> 接口。    </p>
+</blockquote>
+<ol>
+<li><p>抽象方法：test。Predicate 接口中包含一个抽象方法： boolean test(T t) 。用于条件判断的场景。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo15PredicateTest &#123;     </span><br><span class="line">    private static void method(Predicate&lt;String&gt; predicate) &#123;      </span><br><span class="line">           boolean veryLong &#x3D; predicate.test(&quot;HelloWorld&quot;);       </span><br><span class="line">          System.out.println(&quot;字符串很长吗：&quot; + veryLong);     </span><br><span class="line">    &#125;       </span><br><span class="line">    public static void main(String[] args) &#123;        </span><br><span class="line">      method(s ‐&gt; s.length() &gt; 5);     </span><br><span class="line">     &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>条件判断的标准是传入的Lambda表达式逻辑，只要字符串长度大于5则认为很长。  </p>
+</li>
+<li><p>默认方法：and</p>
+</li>
+<li><p>默认方法：or</p>
+</li>
+<li><p>默认方法：negate 取反</p>
+</li>
+</ol>
+<h3 id="Function接口（转换）"><a href="#Function接口（转换）" class="headerlink" title="Function接口（转换）"></a>Function接口（转换）</h3><blockquote>
+<p>java.util.function.Function&lt;T,R&gt; 接口用来根据一个类型的数据得到另一个类型的数据，前者称为前置条件， 后者称为后置条件。    </p>
+</blockquote>
+<p>抽象方法：apply<br>Function 接口中主要的抽象方法为： R apply(T t) ，根据类型T的参数获取类型R的结果。<br>使用的场景例如：将 String 类型转换为 Integer 类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo11FunctionApply &#123;     </span><br><span class="line">    private static void method(Function&lt;String, Integer&gt; function) &#123;     </span><br><span class="line">            int num &#x3D; function.apply(&quot;10&quot;);         </span><br><span class="line">            System.out.println(num + 20);     </span><br><span class="line">            &#125;       </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">           method(s ‐&gt; Integer.parseInt(s));   </span><br><span class="line">          &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>默认方法：andThen<br>Function 接口中有一个默认的 andThen 方法，用来进行组合操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Demo12FunctionAndThen &#123;   </span><br><span class="line">     private static void method(Function&lt;String, Integer&gt; one, Function&lt;Integer, Integer&gt; two) &#123;     </span><br><span class="line">            int num &#x3D; one.andThen(two).apply(&quot;10&quot;);   </span><br><span class="line">            System.out.println(num + 20);     </span><br><span class="line">        &#125;     </span><br><span class="line">     public static void main(String[] args) &#123;       </span><br><span class="line">              method(str‐&gt;Integer.parseInt(str)+10, i ‐&gt; i *&#x3D; 10);    </span><br><span class="line">             &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>第一个操作是将字符串解析成为int数字，第二个操作是乘以10。两个操作通过 andThen 按照前后顺序组合到了一 起。</p>
+<blockquote>
+<p>请注意，Function的前置条件泛型和后置条件泛型可以相同。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,171 +291,120 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T11:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络编程--TCP实现文件上传</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">网络编程--TCP实现文件上传</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数式接口"><span class="toc-number">1.1.</span> <span class="toc-text">函数式接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-number">1.1.2.</span> <span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FunctionalInterface注解"><span class="toc-number">1.1.3.</span> <span class="toc-text">@FunctionalInterface注解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数式编程"><span class="toc-number">1.2.</span> <span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的函数式接口"><span class="toc-number">1.2.1.</span> <span class="toc-text">常用的函数式接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Supplier接口-（生产者接口）"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Supplier接口  （生产者接口）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Consumer接口（消费者接口）"><span class="toc-number">1.2.2.</span> <span class="toc-text">Consumer接口（消费者接口）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Predicate接口（判断）"><span class="toc-number">1.2.3.</span> <span class="toc-text">Predicate接口（判断）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function接口（转换）"><span class="toc-number">1.2.4.</span> <span class="toc-text">Function接口（转换）</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/">IO-文件复制</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T06:04:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/">线程池</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2020-03-01T02:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">线程之间的通信</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -390,8 +430,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
