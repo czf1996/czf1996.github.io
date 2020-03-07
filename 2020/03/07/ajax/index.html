@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives: 2020 | Hexo</title>
+  <title>ajax | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/2020/page/2/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/07/ajax/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%BA%E7%A9%BA.png?e=1583556269&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:NvZQ7lcA3kNRvBssbWJevvfIUh8=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%94%A8%E6%88%B7%E5%90%8D%E5%B7%B2%E5%AD%98%E5%9C%A8.png?e=1583556269&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:erPIIF29er9sKAdbJDBd-kmIi9w=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%AF%E7%94%A8.png?e=1583556269&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:cUQc-2o81xAhyBS0kGna1G6H488=&attname=">
+<meta property="article:published_time" content="2020-03-07T03:24:06.000Z">
+<meta property="article:modified_time" content="2020-03-07T03:45:52.445Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%BA%E7%A9%BA.png?e=1583556269&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:NvZQ7lcA3kNRvBssbWJevvfIUh8=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,35 +169,249 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-ajax" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ajax
+    </h1>
+  
+
+        
+        <a href="/czf1996.github.io/2020/03/07/ajax/" class="archive-article-date">
+  	<time datetime="2020-03-07T03:24:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h1 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h1><pre><code>1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML
+    1. 异步和同步：客户端和服务器端相互通信的基础上
+        * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。
+        * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。
+
+        Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 [1] 
+        通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+        传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。
+
+        提升用户的体验
+
+2. 实现方式：
+    1. 原生的JS实现方式（了解）
+                 //1.创建核心对象
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+                }
+
+                //2. 建立连接
+                /*
+                    参数：
+                        1. 请求方式：GET、POST
+                            * get方式，请求参数在URL后边拼接。send方法为空参
+                            * post方式，请求参数在send方法中定义
+                        2. 请求的URL：
+                        3. 同步或异步请求：true（异步）或 false（同步）
+
+                 */
+                xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username=tom&quot;,true);
+
+                //3.发送请求
+                xmlhttp.send();
+
+                //4.接受并处理来自服务器的响应结果
+                //获取方式 ：xmlhttp.responseText
+                //什么时候获取？当服务器响应成功后再获取
+
+                //当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。
+                xmlhttp.onreadystatechange=function()
+                {
+                    //判断readyState就绪状态是否为4，判断status响应状态码是否为200
+                    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+                    {
+                       //获取服务器的响应结果
+                        var responseText = xmlhttp.responseText;
+                        alert(responseText);
+                    }
+                }
+    2. JQeury实现方式
+        1. $.ajax()
+            * 语法：$.ajax({键值对});
+             //使用$.ajax()发送异步请求
+                $.ajax({
+                    url:&quot;ajaxServlet1111&quot; , // 请求路径
+                    type:&quot;POST&quot; , //请求方式
+                    //data: &quot;username=jack&amp;age=23&quot;,//请求参数
+                    data:{&quot;username&quot;:&quot;jack&quot;,&quot;age&quot;:23},
+                    success:function (data) {
+                        alert(data);
+                    },//响应成功后的回调函数
+                    error:function () {
+                        alert(&quot;出错啦...&quot;)
+                    },//表示如果请求响应出现错误，会执行的回调函数
+
+                    dataType:&quot;text&quot;//设置接受到的响应数据的格式
+                });
+        2. $.get()：发送get请求
+            * 语法：$.get(url, [data], [callback], [type])
+                * 参数：
+                    * url：请求路径
+                    * data：请求参数
+                    * callback：回调函数
+                    * type：响应结果的类型
+
+        3. $.post()：发送post请求
+            * 语法：$.post(url, [data], [callback], [type])
+                * 参数：
+                    * url：请求路径
+                    * data：请求参数
+                    * callback：回调函数
+                    * type：响应结果的类型</code></pre><h1 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h1><pre><code>1. 概念： JavaScript Object Notation        JavaScript对象表示法
+    Person p = new Person();
+    p.setName(&quot;张三&quot;);
+    p.setAge(23);
+    p.setGender(&quot;男&quot;);
+
+    var p = {&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;};
+
+    * json现在多用于存储和交换文本信息的语法
+    * 进行数据的传输
+    * JSON 比 XML 更小、更快，更易解析。
+
+2. 语法：
+    1. 基本规则
+        * 数据在名称/值对中：json数据是由键值对构成的
+            * 键用引号(单双都行)引起来，也可以不使用引号
+            * 值得取值类型：
+                1. 数字（整数或浮点数）
+                2. 字符串（在双引号中）
+                3. 逻辑值（true 或 false）
+                4. 数组（在方括号中）    {&quot;persons&quot;:[{},{}]}
+                5. 对象（在花括号中） {&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}
+                6. null
+        * 数据由逗号分隔：多个键值对由逗号分隔
+        * 花括号保存对象：使用{}定义json 格式
+        * 方括号保存数组：[]
+    2. 获取数据:
+        1. json对象.键名
+        2. json对象[&quot;键名&quot;]
+        3. 数组对象[索引]
+        4. 遍历
+                 //1.定义基本格式
+                var person = {&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &apos;gender&apos;: true};
+
+                var ps = [{&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true},
+                    {&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true},
+                    {&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false}];
+
+
+
+
+                //获取person对象中所有的键和值
+                //for in 循环
+               /* for(var key in person){
+                    //这样的方式获取不行。因为相当于  person.&quot;name&quot;
+                    //alert(key + &quot;:&quot; + person.key);
+                    alert(key+&quot;:&quot;+person[key]);
+                }*/
+
+               //获取ps中的所有值
+                for (var i = 0; i &lt; ps.length; i++) {
+                    var p = ps[i];
+                    for(var key in p){
+                        alert(key+&quot;:&quot;+p[key]);
+                    }
+                }
+
+
+3. JSON数据和Java对象的相互转换
+
+    * JSON解析器：
+        * 常见的解析器：Jsonlib，Gson，fastjson，jackson
+
+    1. JSON转为Java对象（了解）
+        1. 导入jackson的相关jar包
+        2. 创建Jackson核心对象 ObjectMapper
+        3. 调用ObjectMapper的相关方法进行转换
+            1. readValue(json字符串数据,Class)
+    2. Java对象转换JSON
+        1. 使用步骤：
+            1. 导入jackson的相关jar包
+            2. 创建Jackson核心对象 ObjectMapper
+            3. 调用ObjectMapper的相关方法进行转换
+                1. 转换方法：
+                    * writeValue(参数1，obj):
+                        参数1：
+                            File：将obj对象转换为JSON字符串，并保存到指定的文件中
+                            Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中
+                            OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中
+                    * writeValueAsString(obj):将对象转为json字符串
+
+                2. 注解：
+                    1. @JsonIgnore：排除属性。
+                    2. @JsonFormat：属性值得格式化
+                        * @JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)
+
+                3. 复杂java对象转换
+                    1. List：数组
+                    2. Map：对象格式一致</code></pre><h1 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h1><pre><code>* 校验用户名是否存在
+    1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。有两种解决方案：
+        1. $.get(type):将最后一个参数type指定为&quot;json&quot;
+        2. 在服务器端设置MIME类型
+            response.setContentType(&quot;application/json;charset=utf-8&quot;);</code></pre><p><strong>ajax.html代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;ajax&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;!-- Bootstrap --&gt;</span><br><span class="line">    &lt;link href&#x3D;&quot;css&#x2F;bootstrap.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;js&#x2F;jquery-3.2.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;js&#x2F;bootstrap.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;!--表单验证JS--&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(function () &#123;</span><br><span class="line">            &#x2F;&#x2F;给username绑定blur事件</span><br><span class="line">            $(&quot;#username&quot;).blur(function () &#123;</span><br><span class="line">                &#x2F;&#x2F;获取username文本输入框的值</span><br><span class="line">                var username &#x3D; $(this).val();</span><br><span class="line">                &#x2F;&#x2F;发送ajax请求</span><br><span class="line">                &#x2F;&#x2F;期望服务器响应回的数据格式：&#123;&quot;userExsit&quot;:true,&quot;msg&quot;:&quot;此用户名太受欢迎,请更换一个&quot;&#125;</span><br><span class="line">                &#x2F;&#x2F;                         &#123;&quot;userExsit&quot;:false,&quot;msg&quot;:&quot;用户名可用&quot;&#125;</span><br><span class="line">                &#x2F;&#x2F;                         &#123;&quot;userExsit&quot;:false, &quot;isEmpt&quot;:true,&quot;msg&quot;:&quot;用户名不能为空&quot;&#125;</span><br><span class="line">                $.post(</span><br><span class="line">                    &quot;finduser&quot;,</span><br><span class="line">                    &#123;username:username&#125;,</span><br><span class="line">                    function (data) &#123;</span><br><span class="line">                        &#x2F;&#x2F;判断userExsit键的值是否是true</span><br><span class="line">                        &#x2F;&#x2F; alert(data);</span><br><span class="line">                        var span &#x3D; $(&quot;#error&quot;);</span><br><span class="line">                        if(data.userExsit)&#123;</span><br><span class="line">                            &#x2F;&#x2F;用户名存在</span><br><span class="line">                            span.css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line">                            span.html(data.msg);</span><br><span class="line">                        &#125;else if (data.userExsit&#x3D;&#x3D;false &amp;&amp; data.isEmpt&#x3D;&#x3D;true)&#123;</span><br><span class="line">                            &#x2F;&#x2F;用户名为空</span><br><span class="line">                            span.css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line">                            span.html(data.msg);</span><br><span class="line">                        &#125; else&#123;</span><br><span class="line">                            &#x2F;&#x2F;用户名不存在</span><br><span class="line">                            span.css(&quot;color&quot;,&quot;green&quot;);</span><br><span class="line">                            span.html(data.msg);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;center&gt;&lt;h2&gt;用户注册&lt;&#x2F;h2&gt;&lt;&#x2F;center&gt;</span><br><span class="line">&lt;form class&#x3D;&quot;form-horizontal&quot; &gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;label for&#x3D;&quot;username&quot; class&#x3D;&quot;col-sm-4 control-label&quot;&gt;Username&lt;&#x2F;label&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;col-sm-4&quot;&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;username&quot; placeholder&#x3D;&quot;username&quot; &gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;col-sm-4&quot;  &gt;</span><br><span class="line">            &lt;span style&#x3D;&quot;height: 34px; line-height: 34px;&quot; id&#x3D;&quot;error&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;label for&#x3D;&quot;inputPassword3&quot; class&#x3D;&quot;col-sm-4 control-label&quot;&gt;Password&lt;&#x2F;label&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;col-sm-4&quot;&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputPassword3&quot; placeholder&#x3D;&quot;Password&quot;&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class&#x3D;&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;col-sm-offset-4 col-sm-4&quot;&gt;</span><br><span class="line">            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-default btn-block&quot;&gt;Sign in&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>servlet代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">package servlet;</span><br><span class="line">import com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line">import javax.servlet.ServletException;</span><br><span class="line">import javax.servlet.annotation.WebServlet;</span><br><span class="line">import javax.servlet.http.HttpServlet;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.HttpServletResponse;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">@WebServlet(&quot;&#x2F;finduser&quot;)</span><br><span class="line">public class servlet extends HttpServlet &#123;</span><br><span class="line">    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">        &#x2F;&#x2F;解决中文乱码问题</span><br><span class="line">        request.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line">        &#x2F;&#x2F;1.获取用户名</span><br><span class="line">        String username &#x3D; request.getParameter(&quot;username&quot;);</span><br><span class="line">        System.out.println(&quot;用户名为：&quot;+username.trim());</span><br><span class="line">        &#x2F;&#x2F;2.调用service层判断用户名是否存在</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;期望服务器响应回的数据格式：&#123;&quot;userExsit&quot;:true,&quot;msg&quot;:&quot;此用户名太受欢迎,请更换一个&quot;&#125;</span><br><span class="line">        &#x2F;&#x2F;                         &#123;&quot;userExsit&quot;:false,&quot;msg&quot;:&quot;用户名可用&quot;&#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;设置响应的数据格式为json</span><br><span class="line">        response.setContentType(&quot;application&#x2F;json;charset&#x3D;utf-8&quot;);</span><br><span class="line">        Map&lt;String,Object&gt; map &#x3D; new HashMap&lt;String,Object&gt;();</span><br><span class="line">        if(&quot;帅丰&quot;.equals(username))&#123;</span><br><span class="line">            &#x2F;&#x2F;存在</span><br><span class="line">            map.put(&quot;userExsit&quot;,true);</span><br><span class="line">            map.put(&quot;msg&quot;,&quot;此用户名太受欢迎,请更换一个&quot;);</span><br><span class="line">        &#125;else if (username.trim() &#x3D;&#x3D; &quot;&quot;) &#123;  &#x2F;&#x2F;用户名为空</span><br><span class="line"></span><br><span class="line">            map.put(&quot;userExsit&quot;,false);</span><br><span class="line">            map.put(&quot;msg&quot;,&quot;用户名不能为空&quot;);</span><br><span class="line">            map.put(&quot;isEmpt&quot;,true);</span><br><span class="line">        &#125;else &#123;&#x2F;&#x2F;不存在</span><br><span class="line">            map.put(&quot;userExsit&quot;,false);</span><br><span class="line">            map.put(&quot;msg&quot;,&quot;用户名可用&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;将map转为json，并且传递给客户端</span><br><span class="line">        &#x2F;&#x2F;将map转为json</span><br><span class="line">        ObjectMapper mapper &#x3D; new ObjectMapper();</span><br><span class="line">        &#x2F;&#x2F;并且传递给客户端</span><br><span class="line">        mapper.writeValue(response.getWriter(),map);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>用户名为空时效果图</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%BA%E7%A9%BA.png?e=1583556269&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:NvZQ7lcA3kNRvBssbWJevvfIUh8=&attname=" alt=""><br><strong>用户名已存在时效果图</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/%E7%94%A8%E6%88%B7%E5%90%8D%E5%B7%B2%E5%AD%98%E5%9C%A8.png?e=1583556269&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:erPIIF29er9sKAdbJDBd-kmIi9w=&attname=" alt=""><br><strong>用户名可用时效果图</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/%E7%94%A8%E6%88%B7%E5%90%8D%E5%8F%AF%E7%94%A8.png?e=1583556269&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:cUQc-2o81xAhyBS0kGna1G6H488=&attname=" alt=""></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2020-03-01T02:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">线程之间的通信</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,315 +423,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/07/ajax/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/03/06/BootStrap%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BootStrap基本使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">线程安全问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AJAX："><span class="toc-number">2.</span> <span class="toc-text">AJAX：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSON："><span class="toc-number">3.</span> <span class="toc-text">JSON：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#案例："><span class="toc-number">4.</span> <span class="toc-text">案例：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-02-29T12:06:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">java基础复习——创建多线程的三种方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-02-29T10:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/">java基础复习——hashset原理：哈希表</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">frameset框架实现整个页面跳转</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/ssh%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:28:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/ssh%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/">ssh注解开发参数问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T06:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/">数据库中文查询为nul问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-25T14:25:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/25/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-25T12:55:55.859Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/czf1996.github.io/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/czf1996.github.io/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -535,8 +562,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
