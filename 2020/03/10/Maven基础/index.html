@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives: 2020 | Hexo</title>
+  <title>Maven基础 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/2020/page/2/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven基础">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/10/Maven%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/firstmaven.png?e=1583814308&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:uQIFt3JHIVFeSjiwtfUuuQop6Hc=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/maven%E7%BB%93%E6%9E%84%E5%9B%BE.png?e=1583814847&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ntLRpJmR-IPSN5OmNgHzOSrs9iQ=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/maven_mysql_%E6%95%B0%E6%8D%AE%E5%BA%93.png?e=1583814847&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:RtezNVBouJ2ZT06LaV4QP27vGnA=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/maven_mysql_test.png?e=1583814847&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Jx6sXyaTitS-036Z-FWG3SHkbXM=&attname=">
+<meta property="article:published_time" content="2020-03-10T03:11:36.000Z">
+<meta property="article:modified_time" content="2020-03-10T03:44:34.224Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/firstmaven.png?e=1583814308&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:uQIFt3JHIVFeSjiwtfUuuQop6Hc=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,35 +170,94 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-Maven基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Maven基础
+    </h1>
+  
+
+        
+        <a href="/czf1996.github.io/2020/03/10/Maven%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-03-10T03:11:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h1 id="案例1：简单的maven认识"><a href="#案例1：简单的maven认识" class="headerlink" title="案例1：简单的maven认识"></a>案例1：简单的maven认识</h1><blockquote>
+<p>目的：了解maven结构    </p>
+</blockquote>
+<p><strong>maven的工程配置文件：pom.xml</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;project xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot; xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">  xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;com.czf&lt;&#x2F;groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;first_maven&lt;&#x2F;artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;&#x2F;version&gt;</span><br><span class="line">  &lt;packaging&gt;war&lt;&#x2F;packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;first_maven Maven Webapp&lt;&#x2F;name&gt;</span><br><span class="line">  &lt;!-- FIXME change it to the project&#39;s website --&gt;</span><br><span class="line">  &lt;url&gt;http:&#x2F;&#x2F;www.example.com&lt;&#x2F;url&gt;</span><br><span class="line"></span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;&#x2F;project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.7&lt;&#x2F;maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.7&lt;&#x2F;maven.compiler.target&gt;</span><br><span class="line">  &lt;&#x2F;properties&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;!--放置的都是项目运行所依赖的jar包--&gt;</span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;!-- https:&#x2F;&#x2F;mvnrepository.com&#x2F;artifact&#x2F;javax.servlet&#x2F;javax.servlet-api --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;javax.servlet&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;javax.servlet-api&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;3.0.1&lt;&#x2F;version&gt;</span><br><span class="line">      &lt;scope&gt;provided&lt;&#x2F;scope&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;javax.servlet.jsp&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;jsp-api&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;2.0&lt;&#x2F;version&gt;</span><br><span class="line">      &lt;scope&gt;provided&lt;&#x2F;scope&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.12&lt;&#x2F;version&gt;</span><br><span class="line">      &lt;scope&gt;test&lt;&#x2F;scope&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">  &lt;&#x2F;dependencies&gt;</span><br><span class="line"></span><br><span class="line">  &lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">      &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.tomcat.maven&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;tomcat7-maven-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.2&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;port&gt;8888&lt;&#x2F;port&gt;</span><br><span class="line">        &lt;&#x2F;configuration&gt;</span><br><span class="line">      &lt;&#x2F;plugin&gt;</span><br><span class="line">      &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.maven.plugins&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;maven-compiler-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;target&gt;1.8&lt;&#x2F;target&gt;</span><br><span class="line">          &lt;source&gt;1.8&lt;&#x2F;source&gt;</span><br><span class="line">          &lt;encoding&gt;UTF-8&lt;&#x2F;encoding&gt;</span><br><span class="line">        &lt;&#x2F;configuration&gt;</span><br><span class="line">      &lt;&#x2F;plugin&gt;</span><br><span class="line">    &lt;&#x2F;plugins&gt;</span><br><span class="line">  &lt;&#x2F;build&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;project&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>servlet:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package com.czf.servlet;</span><br><span class="line"></span><br><span class="line">import javax.servlet.ServletException;</span><br><span class="line">import javax.servlet.annotation.WebServlet;</span><br><span class="line">import javax.servlet.http.HttpServlet;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.HttpServletResponse;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">@WebServlet(&quot;&#x2F;myservlet&quot;)</span><br><span class="line">public class Myservlet extends HttpServlet &#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">        doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">        req.getRequestDispatcher(&quot;&#x2F;hello.jsp&quot;).forward(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>hello.jsp</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    hello czf ,this is maven project</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果图</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/firstmaven.png?e=1583814308&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:uQIFt3JHIVFeSjiwtfUuuQop6Hc=&attname=" alt=""></p>
+<h1 id="案例二：maven项目连接数据库"><a href="#案例二：maven项目连接数据库" class="headerlink" title="案例二：maven项目连接数据库"></a>案例二：maven项目连接数据库</h1><p><strong>项目结构图：</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/maven%E7%BB%93%E6%9E%84%E5%9B%BE.png?e=1583814847&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ntLRpJmR-IPSN5OmNgHzOSrs9iQ=&attname=" alt=""><br><strong>实体类–Admi</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package com.czf.domain;</span><br><span class="line"></span><br><span class="line">public class Admi &#123;</span><br><span class="line">    private Integer id;</span><br><span class="line">    private String  name;</span><br><span class="line"></span><br><span class="line">    public Admi() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Admi(Integer id, String name) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(Integer id) &#123;</span><br><span class="line">        this.id &#x3D; id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;Admi&#123;&quot; +</span><br><span class="line">                &quot;id&#x3D;&quot; + id +</span><br><span class="line">                &quot;, name&#x3D;&#39;&quot; + name + &#39;\&#39;&#39; +</span><br><span class="line">                &#39;&#125;&#39;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>dao接口</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package com.czf.Dao;</span><br><span class="line"></span><br><span class="line">import com.czf.domain.Admi;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public interface IAdmiDao &#123;</span><br><span class="line">    List&lt;Admi&gt; findAll();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>接口实现类</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">package com.czf.DaoImpl;</span><br><span class="line"></span><br><span class="line">import com.czf.Dao.IAdmiDao;</span><br><span class="line">import com.czf.domain.Admi;</span><br><span class="line"></span><br><span class="line">import java.sql.*;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">   public class AdimDaoImpl implements IAdmiDao &#123;</span><br><span class="line"></span><br><span class="line">    public List&lt;Admi&gt; findAll() &#123;</span><br><span class="line">        Connection conn &#x3D; null;</span><br><span class="line">        PreparedStatement pstm &#x3D;null;</span><br><span class="line">        ResultSet rs&#x3D; null;</span><br><span class="line">        List&lt;Admi&gt; list &#x3D; new ArrayList&lt;Admi&gt;();</span><br><span class="line">        try &#123;</span><br><span class="line">            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">            conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;&#x2F;online?userUnicode&#x3D;true&amp;characterEncoding&#x3D;utf8&quot;,&quot;root&quot;,&quot;123456&quot;);</span><br><span class="line">            pstm&#x3D; conn.prepareStatement(&quot;select * from admi&quot;);</span><br><span class="line">            rs &#x3D; pstm.executeQuery();</span><br><span class="line">            while (rs.next())&#123;</span><br><span class="line">                Admi admi &#x3D; new Admi();</span><br><span class="line">                admi.setId(rs.getInt(&quot;aid&quot;));</span><br><span class="line">                admi.setName(rs.getString(&quot;aname&quot;));</span><br><span class="line">                list.add(admi);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                rs.close();</span><br><span class="line">                pstm.close();</span><br><span class="line">                conn.close();</span><br><span class="line">            &#125; catch (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>pom.xml</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- $Id: pom.xml 642118 2008-03-28 08:04:16Z reinhard $ --&gt;</span><br><span class="line">&lt;project xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot; xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot; xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;maven-v4_0_0.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line">  &lt;packaging&gt;war&lt;&#x2F;packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;maven_Mysql&lt;&#x2F;name&gt;</span><br><span class="line">  &lt;groupId&gt;com.czf&lt;&#x2F;groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;maven_Mysql&lt;&#x2F;artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;&#x2F;version&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.1.6&lt;&#x2F;version&gt;</span><br><span class="line">      &lt;scope&gt;runtime&lt;&#x2F;scope&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.12&lt;&#x2F;version&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">  &lt;&#x2F;dependencies&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;&#x2F;project&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>测试类</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import com.czf.Dao.IAdmiDao;</span><br><span class="line">import com.czf.DaoImpl.AdimDaoImpl;</span><br><span class="line">import com.czf.domain.Admi;</span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void test01()&#123;</span><br><span class="line">        IAdmiDao iadmidao &#x3D; new AdimDaoImpl();</span><br><span class="line">        List&lt;Admi&gt; all &#x3D; iadmidao.findAll();</span><br><span class="line">        for (Admi a:all) &#123;</span><br><span class="line">            System.out.println(a.getName());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>数据库中数据</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/maven_mysql_%E6%95%B0%E6%8D%AE%E5%BA%93.png?e=1583814847&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:RtezNVBouJ2ZT06LaV4QP27vGnA=&attname=" alt=""></p>
+<p><strong>测试结果</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/maven_mysql_test.png?e=1583814847&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Jx6sXyaTitS-036Z-FWG3SHkbXM=&attname=" alt=""></p>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>互联网下载依赖坐标：<a href="http://mvnrepository.com/" target="_blank" rel="noopener">http://mvnrepository.com/</a><br>解决maven项目创建过慢问题：<br>添加：<br>archetypeCatalog<br>internal</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/">IO-文件复制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,353 +269,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/10/Maven%E5%9F%BA%E7%A1%80/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T06:04:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/03/07/redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">redis</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/">线程池</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#案例1：简单的maven认识"><span class="toc-number">2.</span> <span class="toc-text">案例1：简单的maven认识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#案例二：maven项目连接数据库"><span class="toc-number">3.</span> <span class="toc-text">案例二：maven项目连接数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#补充"><span class="toc-number">4.</span> <span class="toc-text">补充</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2020-03-01T02:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">线程之间的通信</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">线程安全问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-02-29T12:06:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">java基础复习——创建多线程的三种方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-02-29T10:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/">java基础复习——hashset原理：哈希表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">frameset框架实现整个页面跳转</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/ssh%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:28:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/ssh%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/">ssh注解开发参数问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T06:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/">数据库中文查询为nul问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-25T14:25:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/czf1996.github.io/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/czf1996.github.io/archives/2020/">1</a><span class="page-number current">2</span><a class="page-number" href="/czf1996.github.io/archives/2020/page/3/">3</a><a class="extend next" rel="next" href="/czf1996.github.io/archives/2020/page/3/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -573,8 +408,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
