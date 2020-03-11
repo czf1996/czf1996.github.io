@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Hexo</title>
+  <title>mybatis基础 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/page/3/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatis基础">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/11/mybatis%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/mybatis01.png?e=1583922448&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:w0JYQ8hS5tM5YGsVRsDOXpd4REs=&attname=">
+<meta property="article:published_time" content="2020-03-11T09:10:43.000Z">
+<meta property="article:modified_time" content="2020-03-11T10:50:09.951Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/mybatis01.png?e=1583922448&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:w0JYQ8hS5tM5YGsVRsDOXpd4REs=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,33 +167,76 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-数据库中文查询为nul问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-mybatis基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/">数据库中文查询为nul问题</a>
+    <h1 class="article-title" itemprop="name">
+      mybatis基础
     </h1>
   
 
         
-        <a href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T06:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
+        <a href="/czf1996.github.io/2020/03/11/mybatis%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-03-11T09:10:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1>
-        
-          <a class="article-more-a" href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/#more">more >></a>
-        
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h1 id="mybatis的入门"><a href="#mybatis的入门" class="headerlink" title="mybatis的入门"></a>mybatis的入门</h1><h2 id="mybatis的环境搭建"><a href="#mybatis的环境搭建" class="headerlink" title="mybatis的环境搭建"></a>mybatis的环境搭建</h2><p>第一步：创建maven工程并导入坐标<br>第二步：创建实体类和dao的接口<br>第三步：创建mybatis主配置文件—SqlMapConfig.xml<br>第四步：创建映射配置文件—-IStudentDao.xml</p>
+<h2 id="环境搭建的注意事项"><a href="#环境搭建的注意事项" class="headerlink" title="环境搭建的注意事项"></a>环境搭建的注意事项</h2><ol>
+<li>mybatis的映射配置文件位置必须和dao接口的包接口相同<br><img src="http://q6amgzwue.bkt.clouddn.com/mybatis01.png?e=1583922448&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:w0JYQ8hS5tM5YGsVRsDOXpd4REs=&attname=" alt=""></li>
+<li>映射配置文件的mapper标签的namespace属性值必须是dao接口的全限定类名。</li>
+<li>映射配置文件操作配置（select）,id属性的取值必须是dao接口中的方法名。  <blockquote>
+<p>当我们遵守了以上3点，我们在开发中就无须再写Dao接口的实现类。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><strong>pom.xml</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;project xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot; xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">  xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;com.czf&lt;&#x2F;groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;maven_mybatis&lt;&#x2F;artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;&#x2F;version&gt;</span><br><span class="line">  &lt;packaging&gt;war&lt;&#x2F;packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;maven_mybatis Maven Webapp&lt;&#x2F;name&gt;</span><br><span class="line">  &lt;!-- FIXME change it to the project&#39;s website --&gt;</span><br><span class="line">  &lt;url&gt;http:&#x2F;&#x2F;www.example.com&lt;&#x2F;url&gt;</span><br><span class="line"></span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;&#x2F;project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.7&lt;&#x2F;maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.7&lt;&#x2F;maven.compiler.target&gt;</span><br><span class="line">  &lt;&#x2F;properties&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.11&lt;&#x2F;version&gt;</span><br><span class="line">      &lt;scope&gt;test&lt;&#x2F;scope&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.1.6&lt;&#x2F;version&gt;</span><br><span class="line">      &lt;scope&gt;runtime&lt;&#x2F;scope&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.mybatis&lt;&#x2F;groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mybatis&lt;&#x2F;artifactId&gt;</span><br><span class="line">      &lt;version&gt;3.4.5&lt;&#x2F;version&gt;</span><br><span class="line">    &lt;&#x2F;dependency&gt;</span><br><span class="line">  &lt;&#x2F;dependencies&gt;</span><br><span class="line">  &lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">      &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.maven.plugins&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;maven-compiler-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;target&gt;1.8&lt;&#x2F;target&gt;</span><br><span class="line">          &lt;source&gt;1.8&lt;&#x2F;source&gt;</span><br><span class="line">          &lt;encoding&gt;UTF-8&lt;&#x2F;encoding&gt;</span><br><span class="line">        &lt;&#x2F;configuration&gt;</span><br><span class="line">      &lt;&#x2F;plugin&gt;</span><br><span class="line">    &lt;&#x2F;plugins&gt;</span><br><span class="line">  &lt;&#x2F;build&gt;</span><br><span class="line">&lt;&#x2F;project&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>mybatis主配置文件</strong><br> SqlMapConfig.xml 中配置的内容和顺序:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-properties（属性）</span><br><span class="line">--property</span><br><span class="line">-settings（全局配置参数）</span><br><span class="line">--setting</span><br><span class="line">-typeAliases（类型别名）</span><br><span class="line">--typeAliase</span><br><span class="line">--package</span><br><span class="line">-typeHandlers（类型处理器）</span><br><span class="line">-objectFactory（对象工厂）</span><br><span class="line">-plugins（插件）</span><br><span class="line">-environments（环境集合属性对象）</span><br><span class="line">--environment（环境子属性对象）</span><br><span class="line">---transactionManager（事务管理）</span><br><span class="line">---dataSource（数据源）</span><br><span class="line">-mappers（映射器）</span><br><span class="line">--mapper</span><br><span class="line">--package</span><br></pre></td></tr></table></figure><br>映射器（mapper）：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper resource &#x3D;&quot;com&#x2F;czf&#x2F;dao&#x2F;IStudentDao.xml&quot;&gt; &#x2F;&#x2F;用于资源文件（如：.xml文件）  </span><br><span class="line">&lt;mapper class &#x3D;&quot;com.czf.dao.IStudentDao&quot;&gt; &#x2F;&#x2F;用于注解开发，使用指定被注解的dao全限定类名</span><br><span class="line">&lt;package name &#x3D;&quot;com.czf.dao&quot;&gt; &#x2F;&#x2F;package标签用于指定dao接口所在的包，当指定了之后就不需要写mapper以及resuoce或者class了</span><br></pre></td></tr></table></figure>
+
+<p><strong>SqlMapperConfig</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!-- 导入约束 --&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Config 3.0&#x2F;&#x2F;EN&quot;</span><br><span class="line">        &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;properties resource&#x3D;&quot;jdbcConfig.properties&quot;&gt;&lt;&#x2F;properties&gt;</span><br><span class="line">    &lt;typeAliases&gt;</span><br><span class="line">        &lt;package name&#x3D;&quot;com.czf.domain&quot;&gt;&lt;&#x2F;package&gt;</span><br><span class="line">    &lt;&#x2F;typeAliases&gt;</span><br><span class="line">    &lt;!-- 配置mybatis的环境 --&gt;</span><br><span class="line">    &lt;environments default&#x3D;&quot;mysql&quot;&gt;</span><br><span class="line">        &lt;!-- 配置mysql的环境 --&gt;</span><br><span class="line">        &lt;environment id&#x3D;&quot;mysql&quot;&gt;</span><br><span class="line">            &lt;!-- 配置事务控制的方式 --&gt;</span><br><span class="line">            &lt;transactionManager type&#x3D;&quot;JDBC&quot;&gt;&lt;&#x2F;transactionManager&gt;</span><br><span class="line">            &lt;!--配置连接池--&gt;</span><br><span class="line">            &lt;dataSource type&#x3D;&quot;POOLED&quot;&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;driver&quot; value&#x3D;&quot;$&#123;jdbc.driver&#125;&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;url&quot; value&#x3D;&quot;$&#123;jdbc.url&#125;&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;$&#123;jdbc.username&#125;&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">                &lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;$&#123;jdbc.password&#125;&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">            &lt;&#x2F;dataSource&gt;</span><br><span class="line">        &lt;&#x2F;environment&gt;</span><br><span class="line">    &lt;&#x2F;environments&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 指定mapper配置文件的位置 --&gt;</span><br><span class="line">    &lt;mappers&gt;</span><br><span class="line">        &lt;package name&#x3D;&quot;com.czf.dao&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;mappers&gt;</span><br><span class="line">&lt;&#x2F;configuration&gt;</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -206,16 +256,76 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/11/mybatis%E5%9F%BA%E7%A1%80/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/03/10/Maven%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Maven基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -230,94 +340,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/czf1996.github.io/2020/02/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/czf1996.github.io/2020/02/25/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-25T12:55:55.859Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1>
-        
-          <a class="article-more-a" href="/czf1996.github.io/2020/02/25/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/czf1996.github.io/2020/02/25/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mybatis的入门"><span class="toc-number">2.</span> <span class="toc-text">mybatis的入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mybatis的环境搭建"><span class="toc-number">2.1.</span> <span class="toc-text">mybatis的环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境搭建的注意事项"><span class="toc-number">2.2.</span> <span class="toc-text">环境搭建的注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-number">2.3.</span> <span class="toc-text">实现</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/czf1996.github.io/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/czf1996.github.io/">1</a><a class="page-number" href="/czf1996.github.io/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+
   
 
 
@@ -343,8 +391,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
