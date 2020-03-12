@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives: 2020/3 | Hexo</title>
+  <title>spring基础 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/2020/03/page/2/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring基础">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/12/spring%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=">
+<meta property="article:published_time" content="2020-03-12T08:48:41.000Z">
+<meta property="article:modified_time" content="2020-03-12T10:39:30.039Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,35 +167,99 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-spring基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      spring基础
+    </h1>
+  
+
+        
+        <a href="/czf1996.github.io/2020/03/12/spring%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-03-12T08:48:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h1 id="IOC-控制反转"><a href="#IOC-控制反转" class="headerlink" title="IOC 控制反转"></a>IOC 控制反转</h1><p>控制反转：是指把创建对象的权利交给了spring框架，是框架的重要特征，并非面向对象的编程的术语。它包括依赖注入（DI）和依赖查找。<br>明确IOC的作用：<br>消减计算机程序的耦合（解除代码中的依赖关系）     </p>
+<p>框架是怎么创建对象的：<br>bean 标签：用于配置让 spring 创建对象，并且存入 ioc 容器之中<br> id 属性：对象的唯一标识。<br> class 属性：指定要创建对象的全限定类名    </p>
+<h2 id="IOC容器"><a href="#IOC容器" class="headerlink" title="IOC容器"></a>IOC容器</h2><p>spring 中工厂的类结构图<br><img src="http://q6amgzwue.bkt.clouddn.com/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=" alt=""></p>
+<h3 id="BeanFactory-和-ApplicationContext-的区别"><a href="#BeanFactory-和-ApplicationContext-的区别" class="headerlink" title="BeanFactory 和 ApplicationContext 的区别"></a>BeanFactory 和 ApplicationContext 的区别</h3><p>BeanFactory 才是 Spring 容器中的顶层接口。<br>ApplicationContext 是它的子接口。<br>BeanFactory 和 ApplicationContext 的区别：<br>创建对象的时间点不一样。<br>ApplicationContext：只要一读取配置文件，默认情况下就会创建对象。<br>BeanFactory：什么使用什么时候创建对象。    </p>
+<h3 id="ApplicationContext-接口的实现类"><a href="#ApplicationContext-接口的实现类" class="headerlink" title="ApplicationContext 接口的实现类"></a>ApplicationContext 接口的实现类</h3><p>ClassPathXmlApplicationContext：<br>它是从类的根路径下加载配置文件 推荐使用这种<br>FileSystemXmlApplicationContext：<br>它是从磁盘路径上加载配置文件，配置文件可以在磁盘的任意位置。<br>AnnotationConfigApplicationContext:<br>当我们使用注解配置容器对象时，需要使用此类来创建 spring 容器。它用来读取注解。   </p>
+<h2 id="IOC-中-bean-标签和管理对象细节"><a href="#IOC-中-bean-标签和管理对象细节" class="headerlink" title="IOC 中 bean 标签和管理对象细节"></a>IOC 中 bean 标签和管理对象细节</h2><h3 id="bean-标签"><a href="#bean-标签" class="headerlink" title="bean 标签"></a>bean 标签</h3><p>作用：<br>用于配置对象让 spring 来创建的。<br>默认情况下它调用的是类中的无参构造函数。如果没有无参构造函数则不能创建成功。<br>属性：<br>id：给对象在容器中提供一个唯一标识。用于获取对象。<br>class：指定类的全限定类名。用于反射创建对象。默认情况下调用无参构造函数。<br>scope：指定对象的作用范围。     </p>
+<ul>
+<li>singleton :默认值，单例的.    </li>
+<li>prototype :多例的.    </li>
+<li>request :WEB 项目中,Spring 创建一个 Bean 的对象,将对象存入到 request 域中.    </li>
+<li>session :WEB 项目中,Spring 创建一个 Bean 的对象,将对象存入到 session 域中.    </li>
+<li>global session :WEB 项目中,应用在 Portlet 环境.如果没有 Portlet 环境那么<br>globalSession 相当于 session.<br>init-method：指定类中的初始化方法名称。<br>destroy-method：指定类中销毁方法名称。    </li>
+</ul>
+<h3 id="bean-的作用范围和生命周期"><a href="#bean-的作用范围和生命周期" class="headerlink" title="bean 的作用范围和生命周期"></a>bean 的作用范围和生命周期</h3><p>单例对象：scope=”singleton”<br>一个应用只有一个对象的实例。它的作用范围就是整个引用。<br>生命周期：<br>对象出生：当应用加载，创建容器时，对象就被创建了。<br>对象活着：只要容器在，对象一直活着。<br>对象死亡：当应用卸载，销毁容器时，对象就被销毁了。<br>多例对象：scope=”prototype”<br>每次访问对象时，都会重新创建对象实例。<br>生命周期：<br>对象出生：当使用对象时，创建新的对象实例。<br>对象活着：只要对象在使用中，就一直活着。<br>对象死亡：当对象长时间不用时，被 java 的垃圾回收器回收了。    </p>
+<h3 id="实例化-Bean-的三种方式"><a href="#实例化-Bean-的三种方式" class="headerlink" title="实例化 Bean 的三种方式"></a>实例化 Bean 的三种方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一种方式：使用默认无参构造函数</span><br><span class="line">&lt;!--在默认情况下：</span><br><span class="line">它会根据默认无参构造函数来创建类对象。如果 bean 中没有默认无参构造函数，将会创建失败。</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;accountService&quot; class&#x3D;&quot;com.itheima.service.impl.AccountServiceImpl&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">第二种方式：spring 管理静态工厂-使用静态工厂的方法创建对象</span><br><span class="line">&#x2F;**</span><br><span class="line">* 模拟一个静态工厂，创建业务层实现类</span><br><span class="line">*&#x2F;</span><br><span class="line">public class StaticFactory &#123;</span><br><span class="line">public static IAccountService createAccountService()&#123;</span><br><span class="line">return new AccountServiceImpl();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 此种方式是:</span><br><span class="line">使用 StaticFactory 类中的静态方法 createAccountService 创建对象，并存入 spring 容器</span><br><span class="line">id 属性：指定 bean 的 id，用于从容器中获取</span><br><span class="line">class 属性：指定静态工厂的全限定类名</span><br><span class="line">factory-method 属性：指定生产对象的静态方法</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;accountService&quot;</span><br><span class="line"> class&#x3D;&quot;com.itheima.factory.StaticFactory&quot;</span><br><span class="line"> factory-method&#x3D;&quot;createAccountService&quot;&gt;&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">第三种方式：spring 管理实例工厂-使用实例工厂的方法创建对象</span><br><span class="line">&#x2F;**</span><br><span class="line">* 模拟一个实例工厂，创建业务层实现类</span><br><span class="line">* 此工厂创建对象，必须现有工厂实例对象，再调用方法</span><br><span class="line">*&#x2F;</span><br><span class="line">public class InstanceFactory &#123;</span><br><span class="line">public IAccountService createAccountService()&#123;</span><br><span class="line">return new AccountServiceImpl();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 此种方式是：</span><br><span class="line">先把工厂的创建交给 spring 来管理。</span><br><span class="line">然后在使用工厂的 bean 来调用里面的方法</span><br><span class="line">factory-bean 属性：用于指定实例工厂 bean 的 id。</span><br><span class="line">factory-method 属性：用于指定实例工厂中创建对象的方法。</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;instancFactory&quot; class&#x3D;&quot;com.itheima.factory.InstanceFactory&quot;&gt;&lt;&#x2F;bean&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;accountService&quot;</span><br><span class="line"> factory-bean&#x3D;&quot;instancFactory&quot;</span><br><span class="line"> factory-method&#x3D;&quot;createAccountService&quot;&gt;&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="依赖注入（DI）"><a href="#依赖注入（DI）" class="headerlink" title="依赖注入（DI）"></a>依赖注入（DI）</h2><h3 id="能注入的数据有三类："><a href="#能注入的数据有三类：" class="headerlink" title="能注入的数据有三类："></a>能注入的数据有三类：</h3><ol>
+<li>基本类型</li>
+<li>其他Bean类型（在配置文件中或注解配置过的Bean）</li>
+<li>复杂类型/集合类型  </li>
+</ol>
+<h3 id="注入的方式有3种："><a href="#注入的方式有3种：" class="headerlink" title="注入的方式有3种："></a>注入的方式有3种：</h3><ol>
+<li>使用构造函数提供</li>
+<li>使用set方法提供（常用方式）</li>
+<li>使用注解提供</li>
+</ol>
+<h4 id="构造注入"><a href="#构造注入" class="headerlink" title="构造注入"></a>构造注入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">顾名思义，就是使用类中的构造函数，给成员变量赋值。注意，赋值的操作不是我们自己做的，而是通过配置</span><br><span class="line">的方式，让 spring 框架来为我们注入。具体代码如下：</span><br><span class="line">&#x2F;**</span><br><span class="line">*&#x2F;</span><br><span class="line">public class AccountServiceImpl implements IAccountService &#123;</span><br><span class="line">private String name;</span><br><span class="line">private Integer age;</span><br><span class="line">private Date birthday;</span><br><span class="line">public AccountServiceImpl(String name, Integer age, Date birthday) &#123;</span><br><span class="line">this.name &#x3D; name;</span><br><span class="line">this.age &#x3D; age;</span><br><span class="line">this.birthday &#x3D; birthday;</span><br><span class="line">&#125;</span><br><span class="line">@Override</span><br><span class="line">public void saveAccount() &#123;</span><br><span class="line">System.out.println(name+&quot;,&quot;+age+&quot;,&quot;+birthday);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 使用构造函数的方式，给 service 中的属性传值</span><br><span class="line">要求：</span><br><span class="line">类中需要提供一个对应参数列表的构造函数。</span><br><span class="line">涉及的标签：</span><br><span class="line">constructor-arg</span><br><span class="line">属性：</span><br><span class="line">index:指定参数在构造函数参数列表的索引位置</span><br><span class="line">type:指定参数在构造函数中的数据类型</span><br><span class="line">name:指定参数在构造函数中的名称 用这个找给谁赋值</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;上面三个都是找给谁赋值，下面两个指的是赋什么值的&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">value:它能赋的值是基本数据类型和 String 类型</span><br><span class="line">ref:它能赋的值是其他 bean 类型，也就是说，必须得是在配置文件中配置过的 bean</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;accountService&quot; class&#x3D;&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;</span><br><span class="line">&lt;constructor-arg name&#x3D;&quot;name&quot; value&#x3D;&quot;张三&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span><br><span class="line">&lt;constructor-arg name&#x3D;&quot;age&quot; value&#x3D;&quot;18&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span><br><span class="line">&lt;constructor-arg name&#x3D;&quot;birthday&quot; ref&#x3D;&quot;now&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;now&quot; class&#x3D;&quot;java.util.Date&quot;&gt;&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="set-方法注入"><a href="#set-方法注入" class="headerlink" title="set 方法注入"></a>set 方法注入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">顾名思义，就是在类中提供需要注入成员的 set 方法。具体代码如下：</span><br><span class="line">&#x2F;** *&#x2F;</span><br><span class="line">public class AccountServiceImpl implements IAccountService &#123;</span><br><span class="line">private String name;</span><br><span class="line">private Integer age;</span><br><span class="line">private Date birthday;</span><br><span class="line">public void setName(String name) &#123;</span><br><span class="line">this.name &#x3D; name;</span><br><span class="line">&#125;</span><br><span class="line">public void setAge(Integer age) &#123;</span><br><span class="line">this.age &#x3D; age;</span><br><span class="line">&#125;</span><br><span class="line">public void setBirthday(Date birthday) &#123;</span><br><span class="line">this.birthday &#x3D; birthday;</span><br><span class="line">&#125;</span><br><span class="line">@Override</span><br><span class="line">public void saveAccount() &#123;</span><br><span class="line">System.out.println(name+&quot;,&quot;+age+&quot;,&quot;+birthday);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 通过配置文件给 bean 中的属性传值：使用 set 方法的方式</span><br><span class="line">涉及的标签：</span><br><span class="line">property</span><br><span class="line">属性：</span><br><span class="line">name：找的是类中 set 方法后面的部分</span><br><span class="line">ref：给属性赋值是其他 bean 类型的</span><br><span class="line">value：给属性赋值是基本数据类型和 string 类型的</span><br><span class="line">实际开发中，此种方式用的较多。</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;accountService&quot; class&#x3D;&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;test&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;age&quot; value&#x3D;&quot;21&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;birthday&quot; ref&#x3D;&quot;now&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;now&quot; class&#x3D;&quot;java.util.Date&quot;&gt;&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="注入集合属性"><a href="#注入集合属性" class="headerlink" title="注入集合属性"></a>注入集合属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">顾名思义，就是给类中的集合成员传值，它用的也是set方法注入的方式，只不过变量的数据类型都是集合。</span><br><span class="line">我们这里介绍注入数组，List,Set,Map,Properties。具体代码如下：</span><br><span class="line">&#x2F;***&#x2F;</span><br><span class="line">public class AccountServiceImpl implements IAccountService &#123;</span><br><span class="line">private String[] myStrs;</span><br><span class="line">private List&lt;String&gt; myList;</span><br><span class="line">private Set&lt;String&gt; mySet;</span><br><span class="line">private Map&lt;String,String&gt; myMap;</span><br><span class="line">private Properties myProps;</span><br><span class="line">public void setMyStrs(String[] myStrs) &#123;</span><br><span class="line">this.myStrs &#x3D; myStrs;</span><br><span class="line">&#125;</span><br><span class="line">public void setMyList(List&lt;String&gt; myList) &#123;</span><br><span class="line">this.myList &#x3D; myList;</span><br><span class="line">&#125;</span><br><span class="line">public void setMySet(Set&lt;String&gt; mySet) &#123;</span><br><span class="line">this.mySet &#x3D; mySet;</span><br><span class="line">&#125;</span><br><span class="line">public void setMyMap(Map&lt;String, String&gt; myMap) &#123;</span><br><span class="line">this.myMap &#x3D; myMap;</span><br><span class="line">&#125;</span><br><span class="line">public void setMyProps(Properties myProps) &#123;</span><br><span class="line">this.myProps &#x3D; myProps;</span><br><span class="line">&#125;</span><br><span class="line">@Override</span><br><span class="line">public void saveAccount() &#123;</span><br><span class="line">System.out.println(Arrays.toString(myStrs));</span><br><span class="line">System.out.println(myList);</span><br><span class="line">System.out.println(mySet);</span><br><span class="line">System.out.println(myMap);</span><br><span class="line">System.out.println(myProps);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 注入集合数据</span><br><span class="line">List 结构的：</span><br><span class="line">array,list,set</span><br><span class="line">Map 结构的</span><br><span class="line">map,entry,props,prop</span><br><span class="line">--&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;accountService&quot; class&#x3D;&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;</span><br><span class="line">&lt;!-- 在注入集合数据时，只要结构相同，标签可以互换 --&gt;</span><br><span class="line">&lt;!-- 给数组注入数据 --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;myStrs&quot;&gt;</span><br><span class="line">&lt;set&gt;</span><br><span class="line">&lt;value&gt;AAA&lt;&#x2F;value&gt;</span><br><span class="line">&lt;value&gt;BBB&lt;&#x2F;value&gt;</span><br><span class="line">&lt;value&gt;CCC&lt;&#x2F;value&gt;</span><br><span class="line">&lt;&#x2F;set&gt;</span><br><span class="line">&lt;&#x2F;property&gt;</span><br><span class="line">&lt;!-- 注入 list 集合数据 --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;myList&quot;&gt;</span><br><span class="line">&lt;array&gt;</span><br><span class="line">&lt;value&gt;AAA&lt;&#x2F;value&gt;</span><br><span class="line">&lt;value&gt;BBB&lt;&#x2F;value&gt;</span><br><span class="line">&lt;value&gt;CCC&lt;&#x2F;value&gt;</span><br><span class="line">&lt;&#x2F;array&gt;</span><br><span class="line">&lt;&#x2F;property&gt;</span><br><span class="line">&lt;!-- 注入 set 集合数据 --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;mySet&quot;&gt;</span><br><span class="line">&lt;list&gt;</span><br><span class="line">&lt;value&gt;AAA&lt;&#x2F;value&gt;</span><br><span class="line">&lt;value&gt;BBB&lt;&#x2F;value&gt;</span><br><span class="line">&lt;value&gt;CCC&lt;&#x2F;value&gt;</span><br><span class="line">&lt;&#x2F;list&gt;</span><br><span class="line">&lt;&#x2F;property&gt;</span><br><span class="line">&lt;!-- 注入 Map 数据 --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;myMap&quot;&gt;</span><br><span class="line">&lt;props&gt;</span><br><span class="line">&lt;prop key&#x3D;&quot;testA&quot;&gt;aaa&lt;&#x2F;prop&gt;</span><br><span class="line">&lt;prop key&#x3D;&quot;testB&quot;&gt;bbb&lt;&#x2F;prop&gt;</span><br><span class="line">&lt;&#x2F;props&gt;</span><br><span class="line">&lt;&#x2F;property&gt;</span><br><span class="line">&lt;!-- 注入 properties 数据 --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;myProps&quot;&gt;</span><br><span class="line">&lt;map&gt;</span><br><span class="line">&lt;entry key&#x3D;&quot;testA&quot; value&#x3D;&quot;aaa&quot;&gt;&lt;&#x2F;entry&gt;</span><br><span class="line">&lt;entry key&#x3D;&quot;testB&quot;&gt;</span><br><span class="line">&lt;value&gt;bbb&lt;&#x2F;value&gt;</span><br><span class="line">&lt;&#x2F;entry&gt;</span><br><span class="line">&lt;&#x2F;map&gt;</span><br><span class="line">&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/03/MySql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-03-03T10:09:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/03/MySql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">MySql--DQL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,250 +271,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/12/spring%E5%9F%BA%E7%A1%80/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-Stream%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-03-03T08:08:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/03/12/mybatis%E5%90%8E%E7%BB%AD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mybatis后续</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-Stream%E6%B5%81/">JDK8新特性---Stream流</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IOC-控制反转"><span class="toc-number">2.</span> <span class="toc-text">IOC 控制反转</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC容器"><span class="toc-number">2.1.</span> <span class="toc-text">IOC容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BeanFactory-和-ApplicationContext-的区别"><span class="toc-number">2.1.1.</span> <span class="toc-text">BeanFactory 和 ApplicationContext 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ApplicationContext-接口的实现类"><span class="toc-number">2.1.2.</span> <span class="toc-text">ApplicationContext 接口的实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC-中-bean-标签和管理对象细节"><span class="toc-number">2.2.</span> <span class="toc-text">IOC 中 bean 标签和管理对象细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bean-标签"><span class="toc-number">2.2.1.</span> <span class="toc-text">bean 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bean-的作用范围和生命周期"><span class="toc-number">2.2.2.</span> <span class="toc-text">bean 的作用范围和生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例化-Bean-的三种方式"><span class="toc-number">2.2.3.</span> <span class="toc-text">实例化 Bean 的三种方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖注入（DI）"><span class="toc-number">2.3.</span> <span class="toc-text">依赖注入（DI）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#能注入的数据有三类："><span class="toc-number">2.3.1.</span> <span class="toc-text">能注入的数据有三类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注入的方式有3种："><span class="toc-number">2.3.2.</span> <span class="toc-text">注入的方式有3种：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#构造注入"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">构造注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set-方法注入"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">set 方法注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注入集合属性"><span class="toc-number">2.3.2.3.</span> <span class="toc-text">注入集合属性</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-03-03T03:20:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">JDK8新特性--函数式接口</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T11:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">网络编程--TCP实现文件上传</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/">IO-文件复制</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T06:04:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/">线程池</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2020-03-01T02:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">线程之间的通信</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/czf1996.github.io/archives/2020/03/">&amp;laquo; Prev</a><a class="page-number" href="/czf1996.github.io/archives/2020/03/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -470,8 +410,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
