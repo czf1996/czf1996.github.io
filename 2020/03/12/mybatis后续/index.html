@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>ResultType和ResultMap | Hexo</title>
+  <title>mybatis后续 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="展开阅读">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ResultType和ResultMap">
-<meta property="og:url" content="https://github.com/czf1996/2020/03/11/ResultType%E5%92%8CResultMap/index.html">
+<meta property="og:title" content="mybatis后续">
+<meta property="og:url" content="https://github.com/czf1996/2020/03/12/mybatis%E5%90%8E%E7%BB%AD/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/stu2.png?e=1583939873&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:gyKtR7fsB3JY-wAqg_KdhNGCniY=&attname=">
-<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/stu2%E7%BB%93%E6%9E%9C.png?e=1583940319&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3EFtVnRIPCtj4Na8lg9QJJ8zzdk=&attname=">
-<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/resultmap%E6%B3%A8%E8%A7%A3.png?e=1583940621&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:XYUHcSytK7bc7WNvyHy2qq-YyM8=&attname=">
-<meta property="article:published_time" content="2020-03-11T11:44:10.000Z">
-<meta property="article:modified_time" content="2020-03-11T14:35:50.441Z">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/stu2-2.png?e=1583994298&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:8AS0o3QQ90tUMAz4C3mD2v0qM8g=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-12_test.png?e=1583994556&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:y2HG5zctTrBhUXtmBMiYMHbav9Q=&attname=">
+<meta property="article:published_time" content="2020-03-12T03:41:29.000Z">
+<meta property="article:modified_time" content="2020-03-12T05:29:41.568Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/stu2.png?e=1583939873&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:gyKtR7fsB3JY-wAqg_KdhNGCniY=&attname=">
+<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/stu2-2.png?e=1583994298&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:8AS0o3QQ90tUMAz4C3mD2v0qM8g=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -168,20 +168,20 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-ResultType和ResultMap" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-mybatis后续" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ResultType和ResultMap
+      mybatis后续
     </h1>
   
 
         
-        <a href="/czf1996.github.io/2020/03/11/ResultType%E5%92%8CResultMap/" class="archive-article-date">
-  	<time datetime="2020-03-11T11:44:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
+        <a href="/czf1996.github.io/2020/03/12/mybatis%E5%90%8E%E7%BB%AD/" class="archive-article-date">
+  	<time datetime="2020-03-12T03:41:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
 </a>
         
       </header>
@@ -189,22 +189,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
-<h1 id="mybatis的输出结果类型"><a href="#mybatis的输出结果类型" class="headerlink" title="mybatis的输出结果类型"></a>mybatis的输出结果类型</h1><ol>
-<li>resultType : 要求：实体类中的属性名称必须和sql语句中的字段名保持一致，否则无法实现封装。   </li>
-<li>resultMap : 建立实体类与数据库表中字段的对应关系。</li>
+<h1 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h1><p><strong>两种方式：</strong>  </p>
+<ol>
+<li>like #{username}  —-对应preparedstatment</li>
+<li>like ‘%${value}%’ —-对应statement(字符串拼接)   </li>
 </ol>
-<h2 id="实体类的属性名称与sql语句的字段名不一致，有2个结局方案："><a href="#实体类的属性名称与sql语句的字段名不一致，有2个结局方案：" class="headerlink" title="实体类的属性名称与sql语句的字段名不一致，有2个结局方案："></a>实体类的属性名称与sql语句的字段名不一致，有2个结局方案：</h2><p>1.在sql语句给字段起别名，以达到与实体类属性名称一致。<br><strong>好处：</strong>执行效率更高<br>2. resultMap 结果类型<br>建立实体类和数据库表的对应关系</p>
-<h1 id="案例演示"><a href="#案例演示" class="headerlink" title="案例演示"></a>案例演示</h1><p><strong>数据库</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/stu2.png?e=1583939873&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:gyKtR7fsB3JY-wAqg_KdhNGCniY=&attname=" alt=""><br><strong>运行结果图</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/stu2%E7%BB%93%E6%9E%9C.png?e=1583940319&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3EFtVnRIPCtj4Na8lg9QJJ8zzdk=&attname=" alt=""></p>
-<h2 id="映射配置文件-—resultMap"><a href="#映射配置文件-—resultMap" class="headerlink" title="映射配置文件 —resultMap"></a>映射配置文件 —resultMap</h2><p>在之前的映射配置文件做修改：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot;</span><br><span class="line">        &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace&#x3D;&quot;com.czf.dao.IStudentDao&quot;&gt;</span><br><span class="line">    &lt;select id&#x3D;&quot;findAll&quot; resultMap&#x3D;&quot;stu2Map&quot;&gt;</span><br><span class="line">        select * from stu2;</span><br><span class="line">    &lt;&#x2F;select&gt;</span><br><span class="line">    &lt;resultMap id&#x3D;&quot;stu2Map&quot; type&#x3D;&quot;com.czf.domain.Student&quot;&gt;</span><br><span class="line">        &lt;id column&#x3D;&quot;sid&quot; property&#x3D;&quot;id&quot;&#x2F;&gt;</span><br><span class="line">        &lt;result column&#x3D;&quot;sname&quot; property&#x3D;&quot;name&quot;&#x2F;&gt;</span><br><span class="line">        &lt;result column&#x3D;&quot;spassword&quot; property&#x3D;&quot;password&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;resultMap&gt;</span><br><span class="line">&lt;&#x2F;mapper&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="在sql语句中给数据库表的字段起别名（同实体类属性名一致）"><a href="#在sql语句中给数据库表的字段起别名（同实体类属性名一致）" class="headerlink" title="在sql语句中给数据库表的字段起别名（同实体类属性名一致）"></a>在sql语句中给数据库表的字段起别名（同实体类属性名一致）</h2><p>在之前的映射配置文件做修改：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot;</span><br><span class="line">        &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace&#x3D;&quot;com.czf.dao.IStudentDao&quot;&gt;</span><br><span class="line">    &lt;select id&#x3D;&quot;findAll&quot; resultType&#x3D;&quot;Student&quot;&gt;</span><br><span class="line">        select sid as id ,sname as name ,spassword as password from stu2;</span><br><span class="line">   &lt;&#x2F;select&gt;</span><br><span class="line">&lt;&#x2F;mapper&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="result注解开发"><a href="#result注解开发" class="headerlink" title="result注解开发"></a>result注解开发</h2><p>修改IStudentDao接口  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package com.czf.dao;</span><br><span class="line"></span><br><span class="line">import com.czf.domain.Student;</span><br><span class="line">import org.apache.ibatis.annotations.Result;</span><br><span class="line">import org.apache.ibatis.annotations.ResultMap;</span><br><span class="line">import org.apache.ibatis.annotations.Results;</span><br><span class="line">import org.apache.ibatis.annotations.Select;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public interface IStudentDao &#123;</span><br><span class="line">    @Select(&quot;select * from stu2&quot;)</span><br><span class="line">    @Results(id &#x3D; &quot;stu2Map&quot;,value &#x3D; &#123;</span><br><span class="line">            @Result(id &#x3D; true,column &#x3D; &quot;sid&quot;,property &#x3D; &quot;id&quot;),</span><br><span class="line">            @Result(column &#x3D; &quot;sname&quot;,property &#x3D; &quot;name&quot;),</span><br><span class="line">            @Result(column &#x3D; &quot;spassword&quot;,property &#x3D; &quot;password&quot;)</span><br><span class="line">    &#125;)</span><br><span class="line">    List&lt;Student&gt; findAll();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注：若后面还要建立对应关系，可以用@ResultMap注解引用。<br>如：@ResultMap(“stu2Map”)  </p>
-</blockquote>
-<p><img src="http://q6amgzwue.bkt.clouddn.com/resultmap%E6%B3%A8%E8%A7%A3.png?e=1583940621&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:XYUHcSytK7bc7WNvyHy2qq-YyM8=&attname=" alt=""></p>
+<p><strong>数据库：</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/stu2-2.png?e=1583994298&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:8AS0o3QQ90tUMAz4C3mD2v0qM8g=&attname=" alt=""><br><strong>IStudentDao代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package com.czf.dao;</span><br><span class="line"></span><br><span class="line">import com.czf.domain.Student;</span><br><span class="line">import org.apache.ibatis.annotations.Result;</span><br><span class="line">import org.apache.ibatis.annotations.ResultMap;</span><br><span class="line">import org.apache.ibatis.annotations.Results;</span><br><span class="line">import org.apache.ibatis.annotations.Select;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public interface IStudentDao &#123;</span><br><span class="line">    @Select(&quot;select * from stu2&quot;)</span><br><span class="line">    @Results(id &#x3D; &quot;stu2Map&quot;,value &#x3D; &#123;</span><br><span class="line">            @Result(id &#x3D; true,column &#x3D; &quot;sid&quot;,property &#x3D; &quot;id&quot;),</span><br><span class="line">            @Result(column &#x3D; &quot;sname&quot;,property &#x3D; &quot;name&quot;),</span><br><span class="line">            @Result(column &#x3D; &quot;spassword&quot;,property &#x3D; &quot;password&quot;)</span><br><span class="line">    &#125;)</span><br><span class="line">    List&lt;Student&gt; findAll();</span><br><span class="line">    &#x2F;&#x2F;模糊查询1</span><br><span class="line">    @Select(&quot;select * from stu2 where sname like #&#123;name&#125;&quot;)</span><br><span class="line">    @ResultMap(&quot;stu2Map&quot;)</span><br><span class="line">    List&lt;Student&gt; findBylikename(String name);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;模糊查询2</span><br><span class="line">    @Select(&quot;select * from stu2 where sname like &#39;%$&#123;value&#125;%&#39;  &quot;)</span><br><span class="line">    @ResultMap(&quot;stu2Map&quot;)</span><br><span class="line">     List&lt;Student&gt; findByname2(String sname);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>测试用例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">import com.czf.dao.IStudentDao;</span><br><span class="line">import com.czf.domain.Student;</span><br><span class="line">import org.apache.ibatis.io.Resources;</span><br><span class="line">import org.apache.ibatis.session.SqlSession;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line">import org.junit.After;</span><br><span class="line">import org.junit.Before;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.omg.CORBA.PUBLIC_MEMBER;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStream;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class studenttest &#123;</span><br><span class="line">    private SqlSession sqlSession;</span><br><span class="line">    private InputStream in;</span><br><span class="line">    private IStudentDao istudentdao;</span><br><span class="line"></span><br><span class="line">    @Before</span><br><span class="line">    public void before() throws IOException &#123;</span><br><span class="line">        &#x2F;&#x2F;读取配置文件,Resources导入的架包是org.apache.ibatis.io.Resources</span><br><span class="line">        in &#x3D; Resources.getResourceAsStream(&quot;SqlMapperConfig.xml&quot;);</span><br><span class="line">        &#x2F;&#x2F;创建sqlsessionfactory工厂</span><br><span class="line">        SqlSessionFactory sqlSessionFactory &#x3D; new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">        &#x2F;&#x2F;使用工厂生产sqlsession</span><br><span class="line">         sqlSession &#x3D; sqlSessionFactory.openSession();</span><br><span class="line">        &#x2F;&#x2F;使用sqlsesion创建Dao接口的代理对象</span><br><span class="line">        istudentdao &#x3D; sqlSession.getMapper(IStudentDao.class);</span><br><span class="line">    &#125;</span><br><span class="line">    @After</span><br><span class="line">    public void after() throws IOException &#123;</span><br><span class="line">        sqlSession.close();</span><br><span class="line">        in.close();</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void test()&#123;</span><br><span class="line">        List&lt;Student&gt; students &#x3D; istudentdao.findAll();</span><br><span class="line">        for (Student s:students) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void test01()&#123;  &#x2F;&#x2F;#｛｝</span><br><span class="line">        List&lt;Student&gt; stus &#x3D; istudentdao.findBylikename(&quot;%张%&quot;);</span><br><span class="line">        for (Student s:  stus ) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void test02()&#123;  &#x2F;&#x2F;&#39;%$&#123;value&#125;%&#39;</span><br><span class="line">        List&lt;Student&gt; students &#x3D; istudentdao.findByname2(&quot;张&quot;);</span><br><span class="line">        for (Student s:students) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>测试结果</strong><br><img src="http://q6amgzwue.bkt.clouddn.com/2020-03-12_test.png?e=1583994556&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:y2HG5zctTrBhUXtmBMiYMHbav9Q=&attname=" alt=""></p>
 
       
 
@@ -244,6 +238,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -294,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/11/ResultType%E5%92%8CResultMap/"
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/03/12/mybatis%E5%90%8E%E7%BB%AD/"
        alt="微信分享二维码">
     </div>
 </div>
@@ -309,18 +314,9 @@
   
 <nav id="article-nav">
   
-    <a href="/czf1996.github.io/2020/03/12/mybatis%E5%90%8E%E7%BB%AD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          mybatis后续
-        
-      </div>
-    </a>
   
-  
-    <a href="/czf1996.github.io/2020/03/11/mybatis%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mybatis基础</div>
+    <a href="/czf1996.github.io/2020/03/11/ResultType%E5%92%8CResultMap/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ResultType和ResultMap</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -347,7 +343,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mybatis的输出结果类型"><span class="toc-number">2.</span> <span class="toc-text">mybatis的输出结果类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#实体类的属性名称与sql语句的字段名不一致，有2个结局方案："><span class="toc-number">2.1.</span> <span class="toc-text">实体类的属性名称与sql语句的字段名不一致，有2个结局方案：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#案例演示"><span class="toc-number">3.</span> <span class="toc-text">案例演示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#映射配置文件-—resultMap"><span class="toc-number">3.1.</span> <span class="toc-text">映射配置文件 —resultMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在sql语句中给数据库表的字段起别名（同实体类属性名一致）"><span class="toc-number">3.2.</span> <span class="toc-text">在sql语句中给数据库表的字段起别名（同实体类属性名一致）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#result注解开发"><span class="toc-number">3.3.</span> <span class="toc-text">result注解开发</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模糊查询"><span class="toc-number">2.</span> <span class="toc-text">模糊查询</span></a></li></ol>
                     </div>
                 </span>
             </div>
