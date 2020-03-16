@@ -20,8 +20,9 @@
 <meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-16_SpringBoot%E7%BB%93%E6%9E%84%E5%9B%BE.png?e=1584365886&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:pUnitS7hCcjrNHwy47J9quc5noM=&attname=">
 <meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-12_stu.png?e=1584365886&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:cv4k8HBwN8kEMlQRGwNH7rq_r8I=&attname=">
 <meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-16_springboot%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png?e=1584366479&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:x1QgbwuEsnaa4nX0lRZlQiDEYYo=&attname=">
+<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-16_%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E7%BB%93%E6%9E%9C.png?e=1584366812&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Tx9G3E7RWCdYRAxsFKUV63zdThw=&attname=">
 <meta property="article:published_time" content="2020-03-16T12:18:02.000Z">
-<meta property="article:modified_time" content="2020-03-16T12:49:23.935Z">
+<meta property="article:modified_time" content="2020-03-16T12:54:04.613Z">
 <meta property="article:author" content="紫枫">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -217,6 +218,9 @@
 <p>浏览器测试结果<br><img src="http://q6amgzwue.bkt.clouddn.com/2020-03-16_springboot%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png?e=1584366479&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:x1QgbwuEsnaa4nX0lRZlQiDEYYo=&attname=" alt=""></p>
 <p>整合Junit</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.czf;</span><br><span class="line"></span><br><span class="line">import com.czf.domain.Student;</span><br><span class="line">import com.czf.mapper.StudentMapper;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest(classes &#x3D; SpringbootMybatisApplication.class)</span><br><span class="line">public class MybtisTest &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private StudentMapper studentMapper;</span><br><span class="line">    @Test</span><br><span class="line">    public void test()&#123;</span><br><span class="line">        List&lt;Student&gt; stuts &#x3D; studentMapper.findAll();</span><br><span class="line">        System.out.println(stuts);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试用例结果<br><img src="http://q6amgzwue.bkt.clouddn.com/2020-03-16_%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E7%BB%93%E6%9E%9C.png?e=1584366812&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Tx9G3E7RWCdYRAxsFKUV63zdThw=&attname=" alt=""></p>
+
       
 
       
