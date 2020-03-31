@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E6%83%85%E5%86%B5.png?e=1582704262&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:9R1kukID0Y5P3axWxAoAJoQkCZY=&attname=">
+<meta property="og:image" content="http://czf1996.top/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E6%83%85%E5%86%B5.png?e=1582704262&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:9R1kukID0Y5P3axWxAoAJoQkCZY=&attname=">
 <meta property="article:published_time" content="2020-02-26T06:59:41.000Z">
-<meta property="article:modified_time" content="2020-03-12T05:20:34.950Z">
+<meta property="article:modified_time" content="2020-03-31T02:46:36.903Z">
 <meta property="article:author" content="紫枫">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E6%83%85%E5%86%B5.png?e=1582704262&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:9R1kukID0Y5P3axWxAoAJoQkCZY=&attname=">
+<meta name="twitter:image" content="http://czf1996.top/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E6%83%85%E5%86%B5.png?e=1582704262&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:9R1kukID0Y5P3axWxAoAJoQkCZY=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -189,7 +189,7 @@
       
         <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
 
-<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>做毕业设计系统的时候，测试用户登录功能的时候，出现了一个中文用户名不匹配的问题。运行根据用户名与密码查询用户的测试用例，输入正确的用户名与密码，测试能运行成功，查询结果每次都为null。为了找出问题，又写了2个测试用例，一个为根据用户名查询用户，另一个为根据用户密码查询用户。多次测试之后发现，中文名字每次都为Null如下图所示，而英文名字可以查询到用户。<br><img src="http://q6amgzwue.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E6%83%85%E5%86%B5.png?e=1582704262&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:9R1kukID0Y5P3axWxAoAJoQkCZY=&attname=" alt="图片"></p>
+<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>做毕业设计系统的时候，测试用户登录功能的时候，出现了一个中文用户名不匹配的问题。运行根据用户名与密码查询用户的测试用例，输入正确的用户名与密码，测试能运行成功，查询结果每次都为null。为了找出问题，又写了2个测试用例，一个为根据用户名查询用户，另一个为根据用户密码查询用户。多次测试之后发现，中文名字每次都为Null如下图所示，而英文名字可以查询到用户。<br><img src="http://czf1996.top/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E6%83%85%E5%86%B5.png?e=1582704262&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:9R1kukID0Y5P3axWxAoAJoQkCZY=&attname=" alt="图片"></p>
 <h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>猜测可能与数据库字符集有关，在数据库连接的url后添加了<code>?userUnicode=true&amp;amp;characterEncoding=utf8</code>”代码，成功解决问题。  </p>
 <blockquote>
 <p>注意：(xml和propertis中的“&amp;”不同。“&amp;”的转义符号是<code>&amp;amp;</code>)<br>xml配置文件：<code>?userUnicode=true&amp;amp;characterEncoding=utf8</code><br>properties配置文件：<code>?userUnicode=true&amp;characterEncoding=utf8</code></p>

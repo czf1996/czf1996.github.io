@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=">
+<meta property="og:image" content="http://czf1996.top/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=">
 <meta property="article:published_time" content="2020-03-12T08:48:41.000Z">
-<meta property="article:modified_time" content="2020-03-12T10:39:30.039Z">
+<meta property="article:modified_time" content="2020-03-31T02:58:01.225Z">
 <meta property="article:author" content="紫枫">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=">
+<meta name="twitter:image" content="http://czf1996.top/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -190,7 +190,7 @@
         <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
 <h1 id="IOC-控制反转"><a href="#IOC-控制反转" class="headerlink" title="IOC 控制反转"></a>IOC 控制反转</h1><p>控制反转：是指把创建对象的权利交给了spring框架，是框架的重要特征，并非面向对象的编程的术语。它包括依赖注入（DI）和依赖查找。<br>明确IOC的作用：<br>消减计算机程序的耦合（解除代码中的依赖关系）     </p>
 <p>框架是怎么创建对象的：<br>bean 标签：用于配置让 spring 创建对象，并且存入 ioc 容器之中<br> id 属性：对象的唯一标识。<br> class 属性：指定要创建对象的全限定类名    </p>
-<h2 id="IOC容器"><a href="#IOC容器" class="headerlink" title="IOC容器"></a>IOC容器</h2><p>spring 中工厂的类结构图<br><img src="http://q6amgzwue.bkt.clouddn.com/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=" alt=""></p>
+<h2 id="IOC容器"><a href="#IOC容器" class="headerlink" title="IOC容器"></a>IOC容器</h2><p>spring 中工厂的类结构图<br><img src="http://czf1996.top/2020-03-12_spring%E5%B7%A5%E5%8E%82%E7%BB%93%E6%9E%84.png?e=1584013151&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:3Oighi89RpbDex2RH7qsb1VLwj4=&attname=" alt=""></p>
 <h3 id="BeanFactory-和-ApplicationContext-的区别"><a href="#BeanFactory-和-ApplicationContext-的区别" class="headerlink" title="BeanFactory 和 ApplicationContext 的区别"></a>BeanFactory 和 ApplicationContext 的区别</h3><p>BeanFactory 才是 Spring 容器中的顶层接口。<br>ApplicationContext 是它的子接口。<br>BeanFactory 和 ApplicationContext 的区别：<br>创建对象的时间点不一样。<br>ApplicationContext：只要一读取配置文件，默认情况下就会创建对象。<br>BeanFactory：什么使用什么时候创建对象。    </p>
 <h3 id="ApplicationContext-接口的实现类"><a href="#ApplicationContext-接口的实现类" class="headerlink" title="ApplicationContext 接口的实现类"></a>ApplicationContext 接口的实现类</h3><p>ClassPathXmlApplicationContext：<br>它是从类的根路径下加载配置文件 推荐使用这种<br>FileSystemXmlApplicationContext：<br>它是从磁盘路径上加载配置文件，配置文件可以在磁盘的任意位置。<br>AnnotationConfigApplicationContext:<br>当我们使用注解配置容器对象时，需要使用此类来创建 spring 容器。它用来读取注解。   </p>
 <h2 id="IOC-中-bean-标签和管理对象细节"><a href="#IOC-中-bean-标签和管理对象细节" class="headerlink" title="IOC 中 bean 标签和管理对象细节"></a>IOC 中 bean 标签和管理对象细节</h2><h3 id="bean-标签"><a href="#bean-标签" class="headerlink" title="bean 标签"></a>bean 标签</h3><p>作用：<br>用于配置对象让 spring 来创建的。<br>默认情况下它调用的是类中的无参构造函数。如果没有无参构造函数则不能创建成功。<br>属性：<br>id：给对象在容器中提供一个唯一标识。用于获取对象。<br>class：指定类的全限定类名。用于反射创建对象。默认情况下调用无参构造函数。<br>scope：指定对象的作用范围。     </p>

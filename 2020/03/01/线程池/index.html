@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E6%B1%A0.png?e=1583046468&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ZExPEZE4z1LcAjIipYrqRT1fwLw=&attname=">
-<meta property="og:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png?e=1583048108&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Uor8nVn17FhHmAjLVjwTLD74rcg=&attname=">
+<meta property="og:image" content="http://czf1996.top/%E7%BA%BF%E7%A8%8B%E6%B1%A0.png?e=1583046468&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ZExPEZE4z1LcAjIipYrqRT1fwLw=&attname=">
+<meta property="og:image" content="http://czf1996.top/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png?e=1583048108&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Uor8nVn17FhHmAjLVjwTLD74rcg=&attname=">
 <meta property="article:published_time" content="2020-03-01T06:04:15.000Z">
-<meta property="article:modified_time" content="2020-03-01T06:35:43.240Z">
+<meta property="article:modified_time" content="2020-03-31T02:57:41.940Z">
 <meta property="article:author" content="紫枫">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E6%B1%A0.png?e=1583046468&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ZExPEZE4z1LcAjIipYrqRT1fwLw=&attname=">
+<meta name="twitter:image" content="http://czf1996.top/%E7%BA%BF%E7%A8%8B%E6%B1%A0.png?e=1583046468&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ZExPEZE4z1LcAjIipYrqRT1fwLw=&attname=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -192,7 +192,7 @@
 <h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><ul>
 <li>线程池：其实就是一个容纳多个线程的容器，其中的线程可以反复使用，省去了频繁创建线程对象的操作， 无需反复创建线程而消耗过多资源。  </li>
 </ul>
-<p>由于线程池中有很多操作都是与优化资源相关的，我们在这里就不多赘述。我们通过一张图来了解线程池的工作原理：<br><img src="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E6%B1%A0.png?e=1583046468&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ZExPEZE4z1LcAjIipYrqRT1fwLw=&attname=" alt=""></p>
+<p>由于线程池中有很多操作都是与优化资源相关的，我们在这里就不多赘述。我们通过一张图来了解线程池的工作原理：<br><img src="http://czf1996.top/%E7%BA%BF%E7%A8%8B%E6%B1%A0.png?e=1583046468&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:ZExPEZE4z1LcAjIipYrqRT1fwLw=&attname=" alt=""></p>
 <blockquote>
 <p>合理利用线程池能够带来三个好处:</p>
 </blockquote>
@@ -226,7 +226,7 @@
 
 <p>线程池测试类:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package ExecutorService;</span><br><span class="line"></span><br><span class="line">import java.util.concurrent.ExecutorService;</span><br><span class="line">import java.util.concurrent.Executors;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        RunnableImpl r &#x3D; new RunnableImpl();</span><br><span class="line">        &#x2F;&#x2F;创建线程池对象</span><br><span class="line">        ExecutorService es &#x3D; Executors.newFixedThreadPool(2);</span><br><span class="line">        es.submit(r);</span><br><span class="line">        es.submit(r);</span><br><span class="line">        es.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试结果：<br><img src="http://q6amgzwue.bkt.clouddn.com/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png?e=1583048108&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Uor8nVn17FhHmAjLVjwTLD74rcg=&attname=" alt=""></p>
+<p>测试结果：<br><img src="http://czf1996.top/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C.png?e=1583048108&token=kg-_7BPQc-Hs1gPOtAmCKMrOdtTT08eTBhmxRHJm:Uor8nVn17FhHmAjLVjwTLD74rcg=&attname=" alt=""></p>
 
       
 
