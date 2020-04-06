@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives | Hexo</title>
+  <title>权限管理工具--shiro | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/page/3/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="权限管理工具--shiro">
+<meta property="og:url" content="https://github.com/czf1996/2020/04/06/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-shiro/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://czf1996.top/image-20191204153257793.png">
+<meta property="og:image" content="http://czf1996.top/image-20191204154631539.png">
+<meta property="article:published_time" content="2020-04-06T12:04:12.000Z">
+<meta property="article:modified_time" content="2020-04-06T12:25:47.922Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://czf1996.top/image-20191204153257793.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,35 +168,129 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-权限管理工具-shiro" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      权限管理工具--shiro
+    </h1>
+  
+
+        
+        <a href="/czf1996.github.io/2020/04/06/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-shiro/" class="archive-article-date">
+  	<time datetime="2020-04-06T12:04:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><blockquote>
+<p>Subject：主体(当前登录用户)</p>
+<p>​    访问系统的用户，主体可以是用户、程序等，进行认证的都称为主体；</p>
+<p>Principal：身份信息(username)</p>
+<p>   是主体（subject）进行身份认证的标识，标识必须具有唯一性，如用户名、手机号、邮箱地址等，一个主体可以有多个身份，但是必须有一个主身份（Primary Principal）。</p>
+<p>credential：凭证信息(password)</p>
+<p>   是只有主体自己知道的安全信息，如密码、证书等。  </p>
+</blockquote>
+<h2 id="shiro概述"><a href="#shiro概述" class="headerlink" title="shiro概述"></a>shiro概述</h2><h3 id="什么是shiro"><a href="#什么是shiro" class="headerlink" title="什么是shiro"></a>什么是shiro</h3><blockquote>
+<p>Apache Shiro 是Java 的一个安全框架。Shiro 可以非常容易的开发出足够好的应用，其不仅可以用在JavaSE 环境，也可以用在JavaEE 环境。Shiro 可以帮助我们完成：认证、授权、加密、会话管理、与Web 集成、缓存等。</p>
+</blockquote>
+<h3 id="为什么要学shiro"><a href="#为什么要学shiro" class="headerlink" title="为什么要学shiro"></a>为什么要学shiro</h3><blockquote>
+<p>​    既然shiro将安全认证相关的功能抽取出来组成一个框架，使用shiro就可以非常快速的完成认证、授权等功能的开发，降低系统成本。</p>
+<p>​    shiro使用广泛，shiro可以运行在web应用，非web应用，集群分布式应用中越来越多的用户开始使用shiro。</p>
+<p>​    java领域中spring security(原名Acegi)也是一个开源的权限管理框架，但是spring security依赖spring运行，而shiro就相对独立，最主要是因为shiro使用简单、灵活，所以现在越来越多的用户选择shiro。</p>
+</blockquote>
+<h3 id="获取shiro"><a href="#获取shiro" class="headerlink" title="获取shiro"></a>获取shiro</h3><blockquote>
+<p>官网网址：<a href="https://shiro.apache.org/" target="_blank" rel="noopener">https://shiro.apache.org/</a></p>
+<p>帮助文档：<a href="https://shiro.apache.org/reference.html" target="_blank" rel="noopener">https://shiro.apache.org/reference.html</a></p>
+</blockquote>
+<h2 id="shiro架构"><a href="#shiro架构" class="headerlink" title="shiro架构"></a>shiro架构</h2><h3 id="shiro架构图"><a href="#shiro架构图" class="headerlink" title="shiro架构图"></a>shiro架构图</h3><p><img src="http://czf1996.top/image-20191204153257793.png" alt=""></p>
+<h3 id="subject"><a href="#subject" class="headerlink" title="subject"></a>subject</h3><blockquote>
+<p>​    Subject即主体，外部应用与subject进行交互，subject记录了当前操作用户，将用户的概念理解为当前操作的主体，可能是一个通过浏览器请求的用户，也可能是一个运行的程序。    Subject在shiro中是一个接口，接口中定义了很多认证授相关的方法，外部程序通过subject进行认证授，而subject是通过SecurityManager安全管理器进行认证授权</p>
+</blockquote>
+<h3 id="SecurityManager"><a href="#SecurityManager" class="headerlink" title="SecurityManager"></a>SecurityManager</h3><blockquote>
+<p>​    SecurityManager即安全管理器，对全部的subject进行安全管理，它是shiro的核心，负责对所有的subject进行安全管理。通过SecurityManager可以完成subject的认证、授权等，实质上SecurityManager是通过Authenticator进行认证，通过Authorizer进行授权，通过SessionManager进行会话管理等。</p>
+<p>​    SecurityManager是一个接口，继承了Authenticator, Authorizer, SessionManager这三个接口。</p>
+</blockquote>
+<h3 id="Authenticator"><a href="#Authenticator" class="headerlink" title="Authenticator"></a>Authenticator</h3><blockquote>
+<p>​    Authenticator即认证器，对用户身份进行认证，Authenticator是一个接口，shiro提供ModularRealmAuthenticator实现类，通过ModularRealmAuthenticator基本上可以满足大多数需求，也可以自定义认证器。</p>
+</blockquote>
+<h3 id="Authorizer"><a href="#Authorizer" class="headerlink" title="Authorizer"></a>Authorizer</h3><blockquote>
+<p>​    Authorizer即授权器，用户通过认证器认证通过，在访问功能时需要通过授权器判断用户是否有此功能的操作权限。</p>
+</blockquote>
+<h3 id="realm"><a href="#realm" class="headerlink" title="realm"></a>realm</h3><blockquote>
+<p>​    Realm即领域，相当于datasource数据源，securityManager进行安全认证需要通过Realm获取用户权限数据，比如：如果用户身份数据在数据库那么realm就需要从数据库获取用户身份信息。</p>
+<p>​    注意：不要把realm理解成只是从数据源取数据，在realm中还有认证授权校验的相关的代码</p>
+</blockquote>
+<h3 id="sessionManager"><a href="#sessionManager" class="headerlink" title="sessionManager"></a>sessionManager</h3><blockquote>
+<p>sessionManager即会话管理，shiro框架定义了一套会话管理，它不依赖web容器的session，所以shiro可以使用在非web应用上，也可以将分布式应用的会话集中在一点管理，此特性可使它实现单点登录。</p>
+</blockquote>
+<h3 id="SessionDAO"><a href="#SessionDAO" class="headerlink" title="SessionDAO"></a>SessionDAO</h3><blockquote>
+<p>SessionDAO即会话dao，是对session会话操作的一套接口，比如要将session存储到数据库，可以通过jdbc将会话存储到数据库。</p>
+</blockquote>
+<h3 id="CacheManager"><a href="#CacheManager" class="headerlink" title="CacheManager"></a>CacheManager</h3><blockquote>
+<p>CacheManager即缓存管理，将用户权限数据存储在缓存，这样可以提高性能。</p>
+</blockquote>
+<h3 id="Cryptography"><a href="#Cryptography" class="headerlink" title="Cryptography"></a>Cryptography</h3><blockquote>
+<p>Cryptography即密码管理，shiro提供了一套加密/解密的组件，方便开发。比如提供常用的散列、加/解密等功能。</p>
+</blockquote>
+<h2 id="shiro身份验证"><a href="#shiro身份验证" class="headerlink" title="shiro身份验证"></a>shiro身份验证</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><h3 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h3><blockquote>
+<p>​    即在应用中谁能证明他就是他本人。一般提供如他们的身份ID 一些标识信息来表明他就是他本人，如提供身份证，用户名/密码来证明。</p>
+<p>​    在 shiro 中，用户需要提供principals （身份）和credentials（证明）给shiro，从而应用能验证用户身份</p>
+</blockquote>
+<h3 id="principals"><a href="#principals" class="headerlink" title="principals"></a>principals</h3><blockquote>
+<p>身份，即主体的标识属性，可以是任何东西，如用户名、邮箱等，唯一即可。</p>
+<p>一个主体可以有多个principals，但只有一个Primary principals，一般是用户名/密码/手机号。</p>
+</blockquote>
+<h3 id="credentials"><a href="#credentials" class="headerlink" title="credentials"></a>credentials</h3><blockquote>
+<p>证明/凭证，即只有主体知道的安全值，如密码/数字证书等。</p>
+<p>最常见的principals和credentials组合就是用户名/密码了。</p>
+</blockquote>
+<h3 id="验证流程"><a href="#验证流程" class="headerlink" title="验证流程"></a>验证流程</h3><p><img src="http://czf1996.top/image-20191204154631539.png" alt=""></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T11:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">网络编程--TCP实现文件上传</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,364 +302,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/04/06/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-shiro/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/03/19/AdmiLTE%E5%92%8CPageHelper%E6%8F%92%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AdmiLTE和PageHelper插件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/">IO-文件复制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#shiro概述"><span class="toc-number">2.1.</span> <span class="toc-text">shiro概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是shiro"><span class="toc-number">2.1.1.</span> <span class="toc-text">什么是shiro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要学shiro"><span class="toc-number">2.1.2.</span> <span class="toc-text">为什么要学shiro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取shiro"><span class="toc-number">2.1.3.</span> <span class="toc-text">获取shiro</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shiro架构"><span class="toc-number">2.2.</span> <span class="toc-text">shiro架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#shiro架构图"><span class="toc-number">2.2.1.</span> <span class="toc-text">shiro架构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#subject"><span class="toc-number">2.2.2.</span> <span class="toc-text">subject</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SecurityManager"><span class="toc-number">2.2.3.</span> <span class="toc-text">SecurityManager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Authenticator"><span class="toc-number">2.2.4.</span> <span class="toc-text">Authenticator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Authorizer"><span class="toc-number">2.2.5.</span> <span class="toc-text">Authorizer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#realm"><span class="toc-number">2.2.6.</span> <span class="toc-text">realm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sessionManager"><span class="toc-number">2.2.7.</span> <span class="toc-text">sessionManager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SessionDAO"><span class="toc-number">2.2.8.</span> <span class="toc-text">SessionDAO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CacheManager"><span class="toc-number">2.2.9.</span> <span class="toc-text">CacheManager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cryptography"><span class="toc-number">2.2.10.</span> <span class="toc-text">Cryptography</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shiro身份验证"><span class="toc-number">2.3.</span> <span class="toc-text">shiro身份验证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念-1"><span class="toc-number">2.3.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#身份验证"><span class="toc-number">2.3.2.</span> <span class="toc-text">身份验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#principals"><span class="toc-number">2.3.3.</span> <span class="toc-text">principals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#credentials"><span class="toc-number">2.3.4.</span> <span class="toc-text">credentials</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#验证流程"><span class="toc-number">2.3.5.</span> <span class="toc-text">验证流程</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T06:04:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/">线程池</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2020-03-01T02:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">线程之间的通信</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">线程安全问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-02-29T12:06:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">java基础复习——创建多线程的三种方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-02-29T10:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/java%E5%9F%BA%E7%A1%80%E5%A4%8D%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94hashset%E5%8E%9F%E7%90%86%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/">java基础复习——hashset原理：哈希表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/frameset%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">frameset框架实现整个页面跳转</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/ssm%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T07:28:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/ssm%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/">ssm注解开发参数问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T06:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%96%87%E6%9F%A5%E8%AF%A2%E4%B8%BAnul%E9%97%AE%E9%A2%98/">数据库中文查询为nul问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/czf1996.github.io/archives/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/czf1996.github.io/archives/">1</a><a class="page-number" href="/czf1996.github.io/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/czf1996.github.io/archives/page/4/">4</a><a class="extend next" rel="next" href="/czf1996.github.io/archives/page/4/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -584,8 +441,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
