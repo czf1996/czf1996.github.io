@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/czf1996">
-  <title>Archives | Hexo</title>
+  <title>springboot+vue前后端分离 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://github.com/czf1996/archives/page/3/index.html">
+  <meta name="description" content="展开阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot+vue前后端分离">
+<meta property="og:url" content="https://github.com/czf1996/2020/04/11/springboot-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展开阅读">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://czf1996.top/router-view.png">
+<meta property="og:image" content="http://czf1996.top/%E6%95%B0%E6%8D%AE%E5%BA%93book.png">
+<meta property="og:image" content="http://czf1996.top/springboot%2Bvue.png">
+<meta property="article:published_time" content="2020-04-11T07:22:48.000Z">
+<meta property="article:modified_time" content="2020-04-11T11:25:01.658Z">
 <meta property="article:author" content="紫枫">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://czf1996.top/router-view.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,35 +169,112 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-springboot-vue前后端分离" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      springboot+vue前后端分离
+    </h1>
+  
+
+        
+        <a href="/czf1996.github.io/2020/04/11/springboot-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" class="archive-article-date">
+  	<time datetime="2020-04-11T07:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="展开阅读"><a href="#展开阅读" class="headerlink" title="展开阅读"></a>展开阅读</h1><a id="more"></a>
+<h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><h2 id="技术支持"><a href="#技术支持" class="headerlink" title="技术支持"></a>技术支持</h2><p>Springboot+vue+mysql5+jpa</p>
+<h2 id="环境支持"><a href="#环境支持" class="headerlink" title="环境支持"></a>环境支持</h2><ol>
+<li>安装node.js</li>
+<li>安装Vue-cli脚手架<blockquote>
+<p>注意：Vue-cli的版本必须是3.6以上（不包括3.6），否则会出现以下问题：  </p>
+</blockquote>
+</li>
+<li>在cmd中输入“vue ui”,会出现没有改命令  </li>
+<li>在idea控制台中输入”vue add axios” ,安装axios插件报错。   </li>
+</ol>
+<p>详细学习视频：<a href="https://www.bilibili.com/video/BV137411B7vB?p=6" target="_blank" rel="noopener">https://www.bilibili.com/video/BV137411B7vB?p=6</a></p>
+<h1 id="前端vue"><a href="#前端vue" class="headerlink" title="前端vue"></a>前端vue</h1><p>学习网址：<a href="https://cn.vuejs.org/v2/guide/syntax.html#%E6%8F%92%E5%80%BC" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/syntax.html#%E6%8F%92%E5%80%BC</a></p>
+<h2 id="Element-UI"><a href="#Element-UI" class="headerlink" title="Element UI"></a>Element UI</h2><p>在vue脚手架上下载Element UI插件<br>Element UI官网：<a href="https://element.eleme.cn/#/zh-CN/component/message-box#messagebox-dan-kuang" target="_blank" rel="noopener">https://element.eleme.cn/#/zh-CN/component/message-box#messagebox-dan-kuang</a></p>
+<h3 id="Vue-集成-Element-UI"><a href="#Vue-集成-Element-UI" class="headerlink" title="Vue 集成 Element UI"></a>Vue 集成 Element UI</h3><p>Element UI 后台管理系统主要的标签：<br>el-container：构建整个⻚⾯框架。<br>el-aside：构建左侧菜单。<br>el-menu：左侧菜单内容，常⽤属性：<br>:default-openeds：默认展开的菜单，通过菜单的 index 值来关联。<br>:default-active：默认选中的菜单，通过菜单的 index 值来关联。<br>el-submenu：可展开的菜单，常⽤属性：<br>index：菜单的下标，⽂本类型，不能是数值类型。<br>template：对应 el-submenu 的菜单名。<br>i：设置菜单图标，通过 class 属性实则。<br>el-icon-messae<br>el-icon-menu<br>el-icon-setting<br>el-menu-item：菜单的⼦节点，不可再展开，常⽤属性：<br>index：菜单的下标，⽂本类型，不能是数值类型。     </p>
+<h3 id="menu-与-router-的绑定"><a href="#menu-与-router-的绑定" class="headerlink" title="menu 与 router 的绑定"></a>menu 与 router 的绑定</h3><p>1、标签添加 router 属性。<br>2、在⻚⾯中添加 标签，它是⼀个容器，动态渲染你选择的 router。<br>3、标签的 index 值就是要跳转的 router。</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="lt-router-view-gt-标签"><a href="#lt-router-view-gt-标签" class="headerlink" title="&lt;router-view&gt;标签"></a><code>&lt;router-view&gt;</code>标签</h3><p><img src="http://czf1996.top/router-view.png" alt=""><br><code>&lt;router-view&gt;</code>标签的作用就是引入其它组件<br>每个页面最外层都有一个App组件<br>就本项目来说：<br>1.最外层的APP.vue,分为3部分：侧边栏、顶部、主体（<code>&lt;router-view&gt;&lt;/router-view&gt;</code>）<br>2.路由的配置：”/“对应的是Index组件，所以Index的内容存放在APP.vue的<code>&lt;/router-view&gt;</code>中。Index.vue也有<code>&lt;router-view&gt;&lt;/router-view&gt;</code>用来存放后面路径对应的页面内容。</p>
+<h2 id="vue核心代码"><a href="#vue核心代码" class="headerlink" title="vue核心代码"></a>vue核心代码</h2><h3 id="路由的js文件"><a href="#路由的js文件" class="headerlink" title="路由的js文件"></a>路由的js文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"><span class="keyword">import</span> BookManage <span class="keyword">from</span> <span class="string">"../views/BookManage"</span>;</span><br><span class="line"><span class="keyword">import</span> AddBook <span class="keyword">from</span> <span class="string">"../views/AddBook"</span>;</span><br><span class="line"><span class="keyword">import</span> BootUpdate <span class="keyword">from</span> <span class="string">"../views/BootUpdate"</span>;</span><br><span class="line"><span class="keyword">import</span> PageFour <span class="keyword">from</span> <span class="string">"../views/PageFour"</span>;</span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">"../views/Index"</span>;</span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line">  <span class="keyword">const</span> routes = [</span><br><span class="line">    &#123;</span><br><span class="line">      path:<span class="string">"/"</span>,</span><br><span class="line">      name:<span class="string">"图书管理"</span>,</span><br><span class="line">      component:Index,</span><br><span class="line">      show:<span class="literal">true</span>,</span><br><span class="line">      redirect:<span class="string">"/BookManage"</span>,</span><br><span class="line">      children:[</span><br><span class="line">        &#123;</span><br><span class="line">          path:<span class="string">"/BookManage"</span>,</span><br><span class="line">          name:<span class="string">"图书查询"</span>,</span><br><span class="line">          component:BookManage</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          path:<span class="string">"/AddBook"</span>,</span><br><span class="line">          name:<span class="string">"图书添加"</span>,</span><br><span class="line">          component:AddBook</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          path:<span class="string">"/update"</span>,</span><br><span class="line">          name:<span class="string">"图书修改"</span>,</span><br><span class="line">          component:BootUpdate</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">"/navigation"</span>,</span><br><span class="line">      name: <span class="string">"导航2"</span>,</span><br><span class="line">      component: Index,</span><br><span class="line">      show:<span class="literal">false</span>,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          path: <span class="string">"/pageFour"</span>,</span><br><span class="line">          name: <span class="string">"页面4"</span>,</span><br><span class="line">          component: PageFour</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode:<span class="string">'history'</span>,</span><br><span class="line">  base: process.env.BASE_URL,</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
+<h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-container</span> <span class="attr">style</span>=<span class="string">"height: 1000px; border: 1px solid #eee"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-aside</span> <span class="attr">width</span>=<span class="string">"200px"</span>  <span class="attr">style</span>=<span class="string">"background-color: rgb(238, 241, 246);height: 1000px"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-menu</span> <span class="attr">router</span> <span class="attr">:default-openeds</span>=<span class="string">"['0','1']"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-submenu</span> <span class="attr">v-for</span>=<span class="string">"(item,index) in $router.options.routes"</span> <span class="attr">:index</span>=<span class="string">"index+''"</span> <span class="attr">v-if</span>=<span class="string">"item.show"</span> &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot</span>=<span class="string">"title"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-icon-setting"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--$route.path获取的是地址栏上路由--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">v-for</span>=<span class="string">"(item2,index2) in item.children"</span><span class="attr">:index</span>=<span class="string">"item2.path"</span> <span class="attr">:class</span>=<span class="string">"$route.path==item2.path?'is-active':''"</span>&gt;</span>&#123;&#123;item2.name&#125;&#125;<span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-submenu</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-menu</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-aside</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-header</span> <span class="attr">style</span>=<span class="string">"text-align: right; font-size: 12px"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-dropdown</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-icon-setting"</span> <span class="attr">style</span>=<span class="string">"margin-right: 15px"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-dropdown-menu</span> <span class="attr">slot</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">el-dropdown-item</span>&gt;</span>查看<span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">el-dropdown-item</span>&gt;</span>新增<span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">el-dropdown-item</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">el-dropdown-item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-dropdown-menu</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-dropdown</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>王小虎<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-header</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-main</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-main</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.el-header</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#B3C0D1</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#333</span>;</span></span><br><span class="line">    line-height: 60px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.el-aside</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#333</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    data() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> item = &#123;</span></span><br><span class="line"><span class="actionscript">        date: <span class="string">'2016-05-02'</span>,</span></span><br><span class="line"><span class="actionscript">        name: <span class="string">'王小虎'</span>,</span></span><br><span class="line"><span class="actionscript">        address: <span class="string">'上海市普陀区金沙江路 1518 弄'</span></span></span><br><span class="line">      &#125;;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">        tableData: <span class="built_in">Array</span>(<span class="number">20</span>).fill(item)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Index-vue"><a href="#Index-vue" class="headerlink" title="Index.vue"></a>Index.vue</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">        name: <span class="string">"index"</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="BookManage-vue"><a href="#BookManage-vue" class="headerlink" title="BookManage.vue"></a>BookManage.vue</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-table</span></span></span><br><span class="line"><span class="tag">            <span class="attr">:data</span>=<span class="string">"tableData"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">border</span></span></span><br><span class="line"><span class="tag">            <span class="attr">style</span>=<span class="string">"width: 100%"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">                <span class="attr">fixed</span></span></span><br><span class="line"><span class="tag">                <span class="attr">prop</span>=<span class="string">"id"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">label</span>=<span class="string">"编号"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">width</span>=<span class="string">"150"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">                <span class="attr">prop</span>=<span class="string">"name"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">label</span>=<span class="string">"图书名称"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">width</span>=<span class="string">"150"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">                <span class="attr">prop</span>=<span class="string">"author"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">label</span>=<span class="string">"作者"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">width</span>=<span class="string">"150"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">                <span class="attr">label</span>=<span class="string">"操作"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">width</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"edit(scope.row)"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">size</span>=<span class="string">"small"</span>&gt;</span>修改<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"deleteBook(scope.row)"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">size</span>=<span class="string">"small"</span> &gt;</span>删除<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--total总记录数--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">                <span class="attr">background</span></span></span><br><span class="line"><span class="tag">                <span class="attr">layout</span>=<span class="string">"prev, pager, next"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">:page-size</span>=<span class="string">"pageSize"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">:total</span>=<span class="string">"total"</span></span></span><br><span class="line"><span class="tag">                @<span class="attr">current-change</span>=<span class="string">"page"</span></span></span><br><span class="line"><span class="tag">        &gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-pagination</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">        methods: &#123;</span><br><span class="line">            edit(row) &#123;</span><br><span class="line"><span class="actionscript">                <span class="comment">//console.log(row);</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.$router.push(&#123;</span></span><br><span class="line"><span class="actionscript">                    path:<span class="string">'/update'</span>,</span></span><br><span class="line">                    query:&#123;</span><br><span class="line">                        id:row.id</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;,</span><br><span class="line">            deleteBook(row)&#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> _this = <span class="keyword">this</span></span></span><br><span class="line"><span class="actionscript">                axios.delete(<span class="string">'http://localhost:8181/book/deleteById/'</span>+row.id).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                    _this.$alert(<span class="string">'《'</span>+row.name+<span class="string">'》删除成功！'</span>, <span class="string">'消息'</span>, &#123;</span></span><br><span class="line"><span class="actionscript">                        confirmButtonText: <span class="string">'确定'</span>,</span></span><br><span class="line"><span class="javascript">                        callback: <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">                           <span class="comment">// _this.$router.push('/BookManage')</span></span></span><br><span class="line"><span class="javascript">                            <span class="built_in">window</span>.location.reload()<span class="comment">//动态刷新v</span></span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;,</span><br><span class="line">            page(currentPage)&#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> _this =<span class="keyword">this</span></span></span><br><span class="line"><span class="actionscript">                axios.get(<span class="string">'http://localhost:8181/book/findAll/'</span>+(currentPage<span class="number">-1</span>)+<span class="string">'/4'</span>).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(resp)</span></span><br><span class="line">                    _this.tableData=resp.data.content</span><br><span class="line">                    _this.pageSize=resp.data.size</span><br><span class="line">                    _this.total=resp.data.totalElements</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        data() &#123;</span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">                pageSize:<span class="string">'3'</span>,</span></span><br><span class="line"><span class="actionscript">                total:<span class="string">'30'</span>,</span></span><br><span class="line">                tableData: [&#123;</span><br><span class="line">                   id:1,</span><br><span class="line"><span class="actionscript">                    name:<span class="string">'西游记'</span>,</span></span><br><span class="line"><span class="actionscript">                    author:<span class="string">'吴承恩'</span></span></span><br><span class="line">                &#125;,&#123;</span><br><span class="line">                   id:2,</span><br><span class="line"><span class="actionscript">                    name:<span class="string">'红楼梦'</span>,</span></span><br><span class="line"><span class="actionscript">                    author:<span class="string">'曹雪晴'</span></span></span><br><span class="line">                &#125;,</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        created() &#123;</span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> _this =<span class="keyword">this</span></span></span><br><span class="line"><span class="actionscript">            axios.get(<span class="string">'http://localhost:8181/book/findAll/0/4'</span>).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(resp)</span></span><br><span class="line">                _this.tableData=resp.data.content</span><br><span class="line">                _this.pageSize=resp.data.size</span><br><span class="line">                _this.total=resp.data.totalElements</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="BootUpdate-vue"><a href="#BootUpdate-vue" class="headerlink" title="BootUpdate.vue"></a>BootUpdate.vue</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">:model</span>=<span class="string">"ruleForm"</span> <span class="attr">:rules</span>=<span class="string">"rules"</span> <span class="attr">ref</span>=<span class="string">"ruleForm"</span> <span class="attr">label-width</span>=<span class="string">"100px"</span> <span class="attr">class</span>=<span class="string">"demo-ruleForm"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"图书ID"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.id"</span> <span class="attr">readonly</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"图书名称"</span> <span class="attr">prop</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.name"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"作者"</span> <span class="attr">prop</span>=<span class="string">"author"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.author"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"submitForm('ruleForm')"</span>&gt;</span>立即修改<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"resetForm('ruleForm')"</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">        data() &#123;</span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line">                ruleForm: &#123;</span><br><span class="line"><span class="actionscript">                    id:<span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">                    name: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">                    author: <span class="string">''</span>,</span></span><br><span class="line"></span><br><span class="line">                &#125;,</span><br><span class="line">                rules: &#123;</span><br><span class="line">                    name: [</span><br><span class="line"><span class="actionscript">                        &#123; required: <span class="literal">true</span>, message: <span class="string">'请输入图书名称'</span>, trigger: <span class="string">'blur'</span> &#125;,</span></span><br><span class="line">                    ],</span><br><span class="line">                    author: [</span><br><span class="line"><span class="actionscript">                        &#123; required: <span class="literal">true</span>, message: <span class="string">'请输入作者'</span>, trigger: <span class="string">'change'</span> &#125;</span></span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            submitForm(formName) &#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> _this =<span class="keyword">this</span></span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.$refs[formName].validate(<span class="function">(<span class="params">valid</span>) =&gt;</span> &#123;</span></span><br><span class="line">                    if (valid) &#123;</span><br><span class="line"><span class="actionscript">                        axios.put(<span class="string">'http://localhost:8181/book/update'</span>,_this.ruleForm).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                            <span class="keyword">if</span> (resp.data ==<span class="string">"success"</span>)&#123;</span></span><br><span class="line"><span class="actionscript">                                <span class="comment">//_this.$message("添加成功");</span></span></span><br><span class="line"><span class="actionscript">                                <span class="comment">//_this.$router.push("/BookManage")</span></span></span><br><span class="line"><span class="actionscript">                                _this.$alert(<span class="string">'《'</span>+_this.ruleForm.name+<span class="string">'》修改成功！'</span>, <span class="string">'消息'</span>, &#123;</span></span><br><span class="line"><span class="actionscript">                                    confirmButtonText: <span class="string">'确定'</span>,</span></span><br><span class="line"><span class="javascript">                                    callback: <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">                                        _this.$router.push(<span class="string">'/BookManage'</span>)</span></span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;)</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;)</span><br><span class="line"><span class="actionscript">                    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">'error submit!!'</span>);</span></span><br><span class="line"><span class="actionscript">                        <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,</span><br><span class="line">            resetForm(formName) &#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.$refs[formName].resetFields();</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        created() &#123;</span><br><span class="line"><span class="actionscript">           <span class="keyword">var</span> _this =<span class="keyword">this</span></span></span><br><span class="line"><span class="actionscript">            axios.get(<span class="string">'http://localhost:8181/book/findById/'</span>+<span class="keyword">this</span>.$route.query.id).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line">                _this.ruleForm=resp.data</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="AddBook-vue"><a href="#AddBook-vue" class="headerlink" title="AddBook.vue"></a>AddBook.vue</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">:model</span>=<span class="string">"ruleForm"</span> <span class="attr">:rules</span>=<span class="string">"rules"</span> <span class="attr">ref</span>=<span class="string">"ruleForm"</span> <span class="attr">label-width</span>=<span class="string">"100px"</span> <span class="attr">class</span>=<span class="string">"demo-ruleForm"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"图书名称"</span> <span class="attr">prop</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.name"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">"作者"</span> <span class="attr">prop</span>=<span class="string">"author"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">"ruleForm.author"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"submitForm('ruleForm')"</span>&gt;</span>立即创建<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"resetForm('ruleForm')"</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">        data() &#123;</span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line">                ruleForm: &#123;</span><br><span class="line"><span class="actionscript">                    name: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">                    author: <span class="string">''</span>,</span></span><br><span class="line"></span><br><span class="line">                &#125;,</span><br><span class="line">                rules: &#123;</span><br><span class="line">                    name: [</span><br><span class="line"><span class="actionscript">                        &#123; required: <span class="literal">true</span>, message: <span class="string">'请输入图书名称'</span>, trigger: <span class="string">'blur'</span> &#125;,</span></span><br><span class="line">                    ],</span><br><span class="line">                    author: [</span><br><span class="line"><span class="actionscript">                        &#123; required: <span class="literal">true</span>, message: <span class="string">'请输入作者'</span>, trigger: <span class="string">'change'</span> &#125;</span></span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            submitForm(formName) &#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> _this =<span class="keyword">this</span></span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.$refs[formName].validate(<span class="function">(<span class="params">valid</span>) =&gt;</span> &#123;</span></span><br><span class="line">                    if (valid) &#123;</span><br><span class="line"><span class="actionscript">                        axios.post(<span class="string">'http://localhost:8181/book/save'</span>,_this.ruleForm).then(<span class="function"><span class="keyword">function</span> <span class="params">(resp)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                           <span class="keyword">if</span> (resp.data ==<span class="string">"success"</span>)&#123;</span></span><br><span class="line"><span class="actionscript">                               <span class="comment">//_this.$message("添加成功");</span></span></span><br><span class="line"><span class="actionscript">                               <span class="comment">//_this.$router.push("/BookManage")</span></span></span><br><span class="line"><span class="actionscript">                               _this.$alert(<span class="string">'《'</span>+_this.ruleForm.name+<span class="string">'》添加成功！'</span>, <span class="string">'消息'</span>, &#123;</span></span><br><span class="line"><span class="actionscript">                                   confirmButtonText: <span class="string">'确定'</span>,</span></span><br><span class="line"><span class="javascript">                                   callback: <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">                                       _this.$router.push(<span class="string">'/BookManage'</span>)</span></span><br><span class="line">                                   &#125;</span><br><span class="line">                               &#125;)</span><br><span class="line">                           &#125;</span><br><span class="line">                        &#125;)</span><br><span class="line"><span class="actionscript">                    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">'error submit!!'</span>);</span></span><br><span class="line"><span class="actionscript">                        <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,</span><br><span class="line">            resetForm(formName) &#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.$refs[formName].resetFields();</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="后台springboot"><a href="#后台springboot" class="headerlink" title="后台springboot"></a>后台springboot</h2><h3 id="依赖-pom-xml"><a href="#依赖-pom-xml" class="headerlink" title="依赖 pom.xml"></a>依赖 pom.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.czf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springboottest<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>springboottest<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Demo project for Spring Boot<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.vintage<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-vintage-engine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文件application-yml"><a href="#配置文件application-yml" class="headerlink" title="配置文件application.yml"></a>配置文件application.yml</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/library?useUnicode=true&amp;characterEncoding=UTF-8</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line">  <span class="attr">jpa:</span></span><br><span class="line">    <span class="attr">show-sql:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">properties:</span></span><br><span class="line">      <span class="attr">hibernate:</span></span><br><span class="line">        <span class="attr">format_sql:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8181</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.czf.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.persistence.Entity;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GenerationType;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Data</span>  <span class="comment">//该注解可以自动生成set和get方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAuthor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> author;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthor</span><span class="params">(String author)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.author = author;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h3><blockquote>
+<p>例如本项目，前端8080端口，后端8181端口</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.czf.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.CorsRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CrosConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;   <span class="comment">//解决跨域问题</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addMapping(<span class="string">"/**"</span>)</span><br><span class="line">                .allowedOrigins(<span class="string">"*"</span>)</span><br><span class="line">                .allowedMethods(<span class="string">"GET"</span>, <span class="string">"HEAD"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"DELETE"</span>, <span class="string">"OPTIONS"</span>)</span><br><span class="line">                .allowCredentials(<span class="keyword">true</span>)</span><br><span class="line">                .maxAge(<span class="number">3600</span>)</span><br><span class="line">                .allowedHeaders(<span class="string">"*"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="控制层"><a href="#控制层" class="headerlink" title="控制层"></a>控制层</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.czf.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.czf.entity.Book;</span><br><span class="line"><span class="keyword">import</span> com.czf.repository.BookRepository;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Page;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.PageRequest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/book"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookHandler</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> BookRepository bookRepository;</span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/findAll/&#123;page&#125;/&#123;size&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Page&lt;Book&gt; <span class="title">findAll</span><span class="params">(@PathVariable(<span class="string">"page"</span>)</span> Integer page, @<span class="title">PathVariable</span><span class="params">(<span class="string">"size"</span>)</span> Integer size)</span>&#123;</span><br><span class="line">        PageRequest pageRequest = PageRequest.of(page, size);</span><br><span class="line">        <span class="keyword">return</span> bookRepository.findAll(pageRequest);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"/save"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">save</span><span class="params">(@RequestBody Book book)</span></span>&#123;</span><br><span class="line">        Book result = bookRepository.save(book);</span><br><span class="line">        <span class="keyword">if</span>(result != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/findById/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Book <span class="title">findById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bookRepository.findById(id).get();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@PutMapping</span>(<span class="string">"/update"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">update</span><span class="params">(@RequestBody Book book)</span></span>&#123;</span><br><span class="line">        Book result = bookRepository.save(book);</span><br><span class="line">        <span class="keyword">if</span>(result != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@DeleteMapping</span>(<span class="string">"/deleteById/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        bookRepository.deleteById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="dao层"><a href="#dao层" class="headerlink" title="dao层"></a>dao层</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.czf.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.czf.entity.Book;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BookRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">Book</span>,<span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.czf.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.czf.entity.Book;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Page;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.PageRequest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.*;</span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookRepositoryTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> BookRepository bookRepository;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findAll</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(bookRepository.findAll());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span></span>&#123;</span><br><span class="line">        PageRequest p = PageRequest.of(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">        Page&lt;Book&gt; page = bookRepository.findAll(p);</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Book book = <span class="keyword">new</span> Book();</span><br><span class="line">        book.setName(<span class="string">"springboot"</span>);</span><br><span class="line">        book.setAuthor(<span class="string">"张三"</span>);</span><br><span class="line">        Book book1 = bookRepository.save(book);</span><br><span class="line">        System.out.println(book1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findById</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Book book = bookRepository.findById(<span class="number">1</span>).get();</span><br><span class="line">        System.out.println(book);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Book book = <span class="keyword">new</span> Book();</span><br><span class="line">        book.setId(<span class="number">18</span>);</span><br><span class="line">        book.setName(<span class="string">"测试"</span>);</span><br><span class="line">        Book book1 = bookRepository.save(book);</span><br><span class="line">        System.out.println(book1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">()</span></span>&#123;</span><br><span class="line">        bookRepository.deleteById(<span class="number">18</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p><img src="http://czf1996.top/%E6%95%B0%E6%8D%AE%E5%BA%93book.png" alt=""></p>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><img src="http://czf1996.top/springboot%2Bvue.png" alt=""></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/czf1996.github.io/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/05/JS%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/" class="archive-article-date">
-  	<time datetime="2020-03-05T08:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/05/JS%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/">JS简单回顾</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,364 +286,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://czf1996.github.io/zf1996/2020/04/11/springboot-vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"
+       alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0-C3P0%E5%92%8CDruid/" class="archive-article-date">
-  	<time datetime="2020-03-04T02:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/czf1996.github.io/2020/04/11/vue%E5%88%9D%E6%AD%A5%E8%AE%A4%E7%9F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue初步认知</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0-C3P0%E5%92%8CDruid/">数据库连接池--C3P0和Druid</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#展开阅读"><span class="toc-number">1.</span> <span class="toc-text">展开阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发环境"><span class="toc-number">2.</span> <span class="toc-text">开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#技术支持"><span class="toc-number">2.1.</span> <span class="toc-text">技术支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境支持"><span class="toc-number">2.2.</span> <span class="toc-text">环境支持</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端vue"><span class="toc-number">3.</span> <span class="toc-text">前端vue</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Element-UI"><span class="toc-number">3.1.</span> <span class="toc-text">Element UI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-集成-Element-UI"><span class="toc-number">3.1.1.</span> <span class="toc-text">Vue 集成 Element UI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#menu-与-router-的绑定"><span class="toc-number">3.1.2.</span> <span class="toc-text">menu 与 router 的绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-number">3.2.</span> <span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-router-view-gt-标签"><span class="toc-number">3.2.1.</span> <span class="toc-text">&lt;router-view&gt;标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue核心代码"><span class="toc-number">3.3.</span> <span class="toc-text">vue核心代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#路由的js文件"><span class="toc-number">3.3.1.</span> <span class="toc-text">路由的js文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-vue"><span class="toc-number">3.3.2.</span> <span class="toc-text">App.vue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Index-vue"><span class="toc-number">3.3.3.</span> <span class="toc-text">Index.vue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BookManage-vue"><span class="toc-number">3.3.4.</span> <span class="toc-text">BookManage.vue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BootUpdate-vue"><span class="toc-number">3.3.5.</span> <span class="toc-text">BootUpdate.vue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AddBook-vue"><span class="toc-number">3.3.6.</span> <span class="toc-text">AddBook.vue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后台springboot"><span class="toc-number">3.4.</span> <span class="toc-text">后台springboot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖-pom-xml"><span class="toc-number">3.4.1.</span> <span class="toc-text">依赖 pom.xml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件application-yml"><span class="toc-number">3.4.2.</span> <span class="toc-text">配置文件application.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实体类"><span class="toc-number">3.4.3.</span> <span class="toc-text">实体类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决跨域问题"><span class="toc-number">3.4.4.</span> <span class="toc-text">解决跨域问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制层"><span class="toc-number">3.4.5.</span> <span class="toc-text">控制层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dao层"><span class="toc-number">3.4.6.</span> <span class="toc-text">dao层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试类"><span class="toc-number">3.4.7.</span> <span class="toc-text">测试类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库"><span class="toc-number">3.4.8.</span> <span class="toc-text">数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最终效果"><span class="toc-number">3.5.</span> <span class="toc-text">最终效果</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/03/MySql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-03-03T10:09:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/03/MySql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">MySql--DQL</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-Stream%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-03-03T08:08:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-Stream%E6%B5%81/">JDK8新特性---Stream流</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-03-03T03:20:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/03/JDK8%E6%96%B0%E7%89%B9%E6%80%A7-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">JDK8新特性--函数式接口</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T11:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-TCP%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">网络编程--TCP实现文件上传</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/IO-%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/">IO-文件复制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="archive-article-date">
-  	<time datetime="2020-03-01T06:04:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E6%B1%A0/">线程池</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2020-03-01T02:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/03/01/%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/">线程之间的通信</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/czf1996.github.io/2020/02/29/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">线程安全问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/czf1996.github.io/archives/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/czf1996.github.io/archives/">1</a><a class="page-number" href="/czf1996.github.io/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/czf1996.github.io/archives/page/4/">4</a><a class="extend next" rel="next" href="/czf1996.github.io/archives/page/4/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -584,8 +425,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
